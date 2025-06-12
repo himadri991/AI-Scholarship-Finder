@@ -1,0 +1,8 @@
+# Environment variables
+.env.local
+
+# Python cache
+__pycache__/
+
+# Windows batch file
+run_app.bat
