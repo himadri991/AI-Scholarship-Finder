@@ -1,0 +1,50 @@
+<svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="200" rx="10" fill="#f5f7ff"/>
+  
+  <!-- AI Brain -->
+  <circle cx="150" cy="80" r="40" fill="white" stroke="#4f46e5" stroke-width="2"/>
+  <path d="M130 60 Q150 40, 170 60 Q190 80, 170 100 Q150 120, 130 100 Q110 80, 130 60Z" stroke="#4f46e5" stroke-width="2" fill="none"/>
+  <path d="M150 40 L150 120" stroke="#4f46e5" stroke-width="2"/>
+  <path d="M110 80 L190 80" stroke="#4f46e5" stroke-width="2"/>
+  <circle cx="140" cy="70" r="3" fill="#4f46e5"/>
+  <circle cx="160" cy="70" r="3" fill="#4f46e5"/>
+  <circle cx="140" cy="90" r="3" fill="#4f46e5"/>
+  <circle cx="160" cy="90" r="3" fill="#4f46e5"/>
+  
+  <!-- Connection Lines -->
+  <path d="M150 120 L100 150" stroke="#4f46e5" stroke-width="2" stroke-dasharray="5 5"/>
+  <path d="M150 120 L150 150" stroke="#4f46e5" stroke-width="2" stroke-dasharray="5 5"/>
+  <path d="M150 120 L200 150" stroke="#4f46e5" stroke-width="2" stroke-dasharray="5 5"/>
+  
+  <!-- Scholarship Cards -->
+  <rect x="70" y="150" width="60" height="30" rx="5" fill="white" stroke="#4f46e5" stroke-width="1"/>
+  <text x="100" y="170" font-family="Arial" font-size="8" fill="#4f46e5" text-anchor="middle">Scholarship 1</text>
+  
+  <rect x="120" y="150" width="60" height="30" rx="5" fill="white" stroke="#4f46e5" stroke-width="1"/>
+  <text x="150" y="170" font-family="Arial" font-size="8" fill="#4f46e5" text-anchor="middle">Scholarship 2</text>
+  
+  <rect x="170" y="150" width="60" height="30" rx="5" fill="white" stroke="#4f46e5" stroke-width="1"/>
+  <text x="200" y="170" font-family="Arial" font-size="8" fill="#4f46e5" text-anchor="middle">Scholarship 3</text>
+  
+  <!-- Circuit Pattern -->
+  <path d="M50 40 L80 40" stroke="#d1d5f0" stroke-width="2" stroke-dasharray="5 5"/>
+  <path d="M220 40 L250 40" stroke="#d1d5f0" stroke-width="2" stroke-dasharray="5 5"/>
+  <path d="M50 120 L80 120" stroke="#d1d5f0" stroke-width="2" stroke-dasharray="5 5"/>
+  <path d="M220 120 L250 120" stroke="#d1d5f0" stroke-width="2" stroke-dasharray="5 5"/>
+  
+  <circle cx="50" cy="40" r="5" fill="#4f46e5"/>
+  <circle cx="80" cy="40" r="5" fill="#4f46e5"/>
+  <circle cx="220" cy="40" r="5" fill="#4f46e5"/>
+  <circle cx="250" cy="40" r="5" fill="#4f46e5"/>
+  <circle cx="50" cy="120" r="5" fill="#4f46e5"/>
+  <circle cx="80" cy="120" r="5" fill="#4f46e5"/>
+  <circle cx="220" cy="120" r="5" fill="#4f46e5"/>
+  <circle cx="250" cy="120" r="5" fill="#4f46e5"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="30" cy="30" r="5" fill="#818cf8"/>
+  <circle cx="270" cy="170" r="5" fill="#818cf8"/>
+  <circle cx="30" cy="170" r="5" fill="#10b981"/>
+  <circle cx="270" cy="30" r="5" fill="#10b981"/>
+</svg>

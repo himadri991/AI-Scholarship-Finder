@@ -1,0 +1,32 @@
+<svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="200" rx="10" fill="#f5f7ff"/>
+  
+  <!-- Profile Form -->
+  <rect x="50" y="30" width="200" height="140" rx="5" fill="white" stroke="#4f46e5" stroke-width="2"/>
+  
+  <!-- Form Header -->
+  <rect x="50" y="30" width="200" height="30" rx="5" fill="#4f46e5"/>
+  <text x="150" y="50" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Student Profile</text>
+  
+  <!-- Form Fields -->
+  <rect x="70" y="70" width="160" height="20" rx="3" fill="#f0f2ff" stroke="#4f46e5" stroke-width="1"/>
+  <text x="80" y="85" font-family="Arial" font-size="10" fill="#4f46e5">Name</text>
+  
+  <rect x="70" y="100" width="160" height="20" rx="3" fill="#f0f2ff" stroke="#4f46e5" stroke-width="1"/>
+  <text x="80" y="115" font-family="Arial" font-size="10" fill="#4f46e5">Field of Study</text>
+  
+  <rect x="70" y="130" width="160" height="20" rx="3" fill="#f0f2ff" stroke="#4f46e5" stroke-width="1"/>
+  <text x="80" y="145" font-family="Arial" font-size="10" fill="#4f46e5">GPA</text>
+  
+  <!-- User Icon -->
+  <circle cx="250" cy="50" r="10" fill="white"/>
+  <circle cx="250" cy="40" r="5" fill="white"/>
+  <path d="M240 55 Q250 65, 260 55" stroke="white" stroke-width="2" fill="none"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="30" cy="30" r="5" fill="#818cf8"/>
+  <circle cx="270" cy="170" r="5" fill="#818cf8"/>
+  <circle cx="30" cy="170" r="5" fill="#10b981"/>
+  <circle cx="270" cy="30" r="5" fill="#10b981"/>
+</svg>

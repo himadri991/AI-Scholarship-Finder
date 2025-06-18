@@ -45,7 +45,7 @@ if 'messages' not in st.session_state:
 def main():
     # UPDATED TITLE AND INFO FOR GEMINI
     st.title("🎓 AI Scholarship Finder")
-    st.markdown("**Powered by Google Gemini 2.0 Flash** - Advanced multimodal AI scholarship discovery!")
+    st.markdown("**Powered by Google Gemini 2.5 Flash** - Advanced multimodal AI scholarship discovery!")
     
     # Display model info - UPDATED FOR GEMINI
     with st.expander("🤖 About this AI"):
