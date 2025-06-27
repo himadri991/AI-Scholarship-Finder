@@ -17,11 +17,11 @@ streamlit_process = None
 # Function to start Streamlit in a separate thread
 def start_streamlit():
     global streamlit_process
-    print("Starting Streamlit server on port 8502...")
-    # Run Streamlit with minimal watcher on port 8502
+    print("Starting Streamlit server on port 8504...")
+    # Run Streamlit with minimal watcher on port 8504
     cmd = [sys.executable, "-m", "streamlit", "run", "app.py", 
            "--server.fileWatcherType", "none", 
-           "--server.port", "8502",
+           "--server.port", "8504",
            "--server.baseUrlPath", "scholarship-finder"]
     
     streamlit_process = subprocess.Popen(cmd)
@@ -30,9 +30,9 @@ def start_streamlit():
 # Function to start Flask in a separate thread
 def start_flask():
     global flask_process
-    print("Starting Flask server on port 8501...")
+    print("Starting Flask server on port 8503...")
     # Run Flask app
-    cmd = [sys.executable, "flask_app.py"]
+    cmd = [sys.executable, "flask_app.py", "--port", "8503"]
     
     flask_process = subprocess.Popen(cmd)
     print("Flask process started")

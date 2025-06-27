@@ -29,7 +29,7 @@ def scrape_scholarships_from_web():
     # Sample scholarship data generation (fallback)
     fields = ["Engineering", "Medicine", "Business", "Computer Science", "Arts", "Science", "Law", "Education"]
     degree_levels = ["Undergraduate", "Postgraduate", "PhD"]
-    countries = ["USA", "UK", "Canada", "Australia", "India", "Germany", "International"]
+    countries = ["India"]
     
     print("🌐 Internet से scholarship data fetch कर रहे हैं...")
     

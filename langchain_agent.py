@@ -14,10 +14,14 @@ class ScholarshipChatAgent:
             self.llm = ChatGoogleGenerativeAI(
                 google_api_key=os.getenv('GOOGLE_API_KEY'),
                 model="gemini-2.5-flash-preview-05-20",
-                temperature=0.7,
-                max_output_tokens=96000,
+                temperature=0,
+                top_p=0,            # consider only the single best token
+                top_k= 1,            # identical effect to top_p = 0
+                seed= 42,            # repeatable sampling path
+                max_output_tokens= 1024,
                 convert_system_message_to_human=True
             )
+            response = model.generate_content(messages, generation_config=generation_config)
             print("✅ Gemini API initialized successfully")
         except Exception as e:
             print(f"❌ Gemini API Error: {e}")

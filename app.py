@@ -79,7 +79,7 @@ def main():
         )
         country = st.selectbox(
             "Country",
-            ["India", "USA", "UK", "Canada", "Australia", "Germany", "France", "Other"]
+            ["India"]
         )
         
         # Initialize session state for GPA and CGPA if not exists
