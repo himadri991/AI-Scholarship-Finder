@@ -1,6 +1,8 @@
 # Environment variables
 .env.local
 
+env_setup.py
+
 # Python cache
 __pycache__/
 

@@ -80,6 +80,6 @@ def main():
 
 if __name__ == "__main__":
     print("Starting AI Scholarship Finder...")
-    print("Landing page will be available at: http://localhost:8501")
-    print("Scholarship Finder will be available at: http://localhost:8501/scholarship-finder")
+    print("Landing page will be available at: http://localhost:8504")
+    print("Scholarship Finder will be available at: http://localhost:8504/scholarship-finder")
     main()

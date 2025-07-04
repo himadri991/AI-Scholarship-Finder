@@ -78,4 +78,8 @@ def streamlit_proxy(path):
     return redirect(f'http://localhost:8502/scholarship-finder/{path}')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8501)
+    # Get port from command line arguments or default to 8503
+    port = 8503
+    if len(sys.argv) > 2 and sys.argv[1] == '--port':
+        port = int(sys.argv[2])
+    app.run(debug=True, port=port)

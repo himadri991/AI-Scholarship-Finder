@@ -1,11 +1,11 @@
 # AI Scholarship Finder
 
-An intelligent scholarship search and recommendation application powered by LangChain and LLaMA 3 on Groq.
+An intelligent scholarship search and recommendation application powered by LangChain and Google Gemini.
 
 ## Features
 
-- **AI Chatbot**: Chat with LLaMA 3 about scholarships, application guidance, and eligibility requirements
-- **Semantic Search**: Find relevant scholarships using vector search
+- **AI Chatbot**: Chat with Google Gemini about scholarships, application guidance, and eligibility requirements
+- **Semantic Search**: Find relevant scholarships using AI-powered search
 - **Personalized Recommendations**: Get scholarship recommendations based on your academic profile
 - **Application Guidance**: Receive step-by-step guidance for applying to scholarships
 
@@ -39,14 +39,20 @@ pip install -r requirements.txt
 Create a `.env` file in the root directory with the following API keys:
 
 ```
-GROQ_API_KEY=your_groq_api_key
-GOOGLE_API_KEY=your_google_api_key (optional)
+GOOGLE_API_KEY=your_google_api_key
 GOOGLE_CSE_ID=your_cse_id (optional)
+GROQ_API_KEY=your_groq_api_key (optional)
 PINECONE_API_KEY=your_pinecone_api_key (optional)
 TAVILY_API_KEY=your_tavily_api_key (optional)
 ```
 
-You must have at least the GROQ_API_KEY for the application to work.
+You must have at least the GOOGLE_API_KEY for the application to work.
+
+Alternatively, you can run the env_setup.py script to create the .env file with sample API keys:
+
+```bash
+python env_setup.py
+```
 
 ### 4. Initialize Sample Data
 
@@ -58,13 +64,27 @@ python init_data.py
 
 ### 5. Run the Application
 
-Start the Streamlit application:
+You have two options to run the application:
+
+#### Option 1: Using the batch file (Windows)
 
 ```bash
+run_app.bat
+```
+
+#### Option 2: Manually running the application
+
+```bash
+# Activate the virtual environment
+venv\Scripts\activate
+
+# Run the application
 python run_app.py
 ```
 
-This will launch the application at http://localhost:8502 by default.
+This will launch the application with:
+- Landing page at http://localhost:8501
+- Scholarship Finder at http://localhost:8501/scholarship-finder
 
 ## Troubleshooting
 
@@ -104,9 +124,9 @@ If you see error messages about API keys:
 ## Technologies Used
 
 - **LangChain**: Framework for building LLM applications
-- **Groq LLaMA 3**: Large language model for natural language understanding
-- **Streamlit**: Web interface
-- **TF-IDF/Sklearn**: Vector search implementation
+- **Google Gemini**: Large language model for natural language understanding
+- **Streamlit**: Web interface for the scholarship finder
+- **Flask**: Web server for the landing page
 - **Python**: Programming language 
 
 ## Setting Up Google Search for Scholarships

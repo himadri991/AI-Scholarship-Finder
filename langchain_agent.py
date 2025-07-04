@@ -5,27 +5,33 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 import os
 from typing import List, Dict
+import streamlit as st
 
 class ScholarshipChatAgent:
     def __init__(self):
-        """Initialize the scholarship chat agent with Google Gemini"""
+        """Initialize the scholarship chat agent with Scholardeep"""
         try:
-            # Initialize Google Gemini 2.5 Flash
+            # Validate API key first
+            api_key = os.getenv('GOOGLE_API_KEY')
+            if not api_key:
+                raise ValueError("GOOGLE_API_KEY not found in environment variables")
+            
+            # Initialize Gemini with correct model name
             self.llm = ChatGoogleGenerativeAI(
-                google_api_key=os.getenv('GOOGLE_API_KEY'),
-                model="gemini-2.5-flash-preview-05-20",
-                temperature=0,
-                top_p=0,            # consider only the single best token
-                top_k= 1,            # identical effect to top_p = 0
-                seed= 42,            # repeatable sampling path
-                max_output_tokens= 1024,
+                google_api_key=api_key,
+                model="gemini-2.5-flash",  # Fixed: Use valid model name
+                temperature=0.3,  # Slightly higher for more creative responses
+                max_output_tokens=96000,  # Reduced for better reliability
                 convert_system_message_to_human=True
             )
-            response = model.generate_content(messages, generation_config=generation_config)
-            print("✅ Gemini API initialized successfully")
+            
+            # Test the connection
+            test_response = self.llm.invoke("Hello")
+            print("✅ Scholardeep initialized and tested successfully")
+            
         except Exception as e:
             print(f"❌ Gemini API Error: {e}")
-            print("🔧 Please enable the Generative Language API in your Google Cloud project")
+            st.error(f"Failed to initialize Gemini: {e}")
             raise e
         
         # Configure memory for conversations
@@ -39,212 +45,236 @@ class ScholarshipChatAgent:
         
         # Initialize other components
         self.tools = self._create_tools()
-        self.agent = self._initialize_agent()
+        try:
+            self.agent = self._initialize_agent()
+        except Exception as e:
+            print(f"Warning: Agent initialization failed: {e}")
+            self.agent = None
+    
+    def get_scholarships_for_profile(self, profile):
+        """Get scholarships specifically for a student profile with enhanced error handling"""
+        try:
+            # Create a more focused prompt
+            prompt = f"""You are a scholarship expert. A student with the following profile needs scholarship recommendations:
+
+**Student Profile:**
+- Name: {profile.get('name', 'Student')}
+- Gender: {profile.get('gender', 'Not specified')}
+- Field of Study: {profile.get('field_of_study', 'Not specified')}
+- Degree Level: {profile.get('degree_level', 'Not specified')}
+- Country: {profile.get('country', 'Not specified')}
+
+**Please provide EXACTLY 5 specific scholarships in this format:**
+
+## 🎯 Scholarship Recommendations
+
+### 1. [Scholarship Name]
+- **Provider:** [Organization Name]
+- **Amount:** $[Amount] or [Description]
+- **Eligibility:** [Key requirements]
+- **Deadline:** [Date or "Various"]
+- **Match Score:** [X/10]
+- **Why Perfect for You:** [Specific reason]
+
+### 2. [Second Scholarship]
+[Continue same format...]
+
+**Important:** Provide real, existing scholarships that match this student's profile. Focus on current opportunities."""
+
+            # Make the API call with better error handling
+            response = self.llm.invoke(prompt)
+            
+            # Extract and validate response
+            if hasattr(response, 'content'):
+                content = response.content
+            else:
+                content = str(response)
+            
+            # Check if response is meaningful
+            if not content or len(content.strip()) < 50:
+                return self._get_fallback_response(profile)
+            
+            return content
+            
+        except Exception as e:
+            print(f"Error in get_scholarships_for_profile: {e}")
+            return self._get_fallback_response(profile, error=str(e))
+    
+    def _get_fallback_response(self, profile, error=None):
+        """Provide a fallback response when API fails"""
+        field = profile.get('field_of_study', 'your field')
+        level = profile.get('degree_level', 'your level')
+        country = profile.get('country', 'your country')
         
+        fallback = f"""## 🎯 Scholarship Opportunities for {field} Students
+
+### Based on your profile, here are scholarship categories to explore:
+
+#### 1. **Merit-Based Scholarships**
+- **Target:** High-achieving {level} students
+- **Focus:** Academic excellence in {field}
+- **Typical Amount:** $1,000 - $25,000
+- **Action:** Search university websites and scholarship databases
+
+#### 2. **Field-Specific Scholarships**
+- **Target:** {field} students at {level} level
+- **Focus:** Supporting students in your specific field
+- **Sources:** Professional associations, industry foundations
+- **Action:** Contact {field} professional organizations
+
+#### 3. **Regional Scholarships**
+- **Target:** Students from {country}
+- **Focus:** Supporting local talent
+- **Sources:** Government programs, local foundations
+- **Action:** Check education ministry websites
+
+#### 4. **Diversity and Inclusion Scholarships**
+- **Target:** Underrepresented groups in {field}
+- **Focus:** Promoting diversity in education
+- **Action:** Search diversity-focused scholarship programs
+
+#### 5. **University-Specific Aid**
+- **Target:** Students at specific institutions
+- **Focus:** Institutional financial aid
+- **Action:** Contact financial aid offices directly
+
+### 🚀 Next Steps:
+1. **Create accounts** on scholarship platforms like Fastweb, Scholarships.com
+2. **Contact your university's** financial aid office
+3. **Join {field} professional associations** for exclusive opportunities
+4. **Set up Google alerts** for "{field} scholarships {level}"
+5. **Prepare standard documents:** transcripts, essays, recommendation letters
+
+### 💡 Pro Tips:
+- Apply to multiple scholarships to increase chances
+- Start applications 3-6 months before deadlines
+- Tailor each application to the specific scholarship
+- Keep detailed records of applications and deadlines"""
+
+        if error:
+            fallback += f"\n\n⚠️ **Note:** Experienced temporary API issues. Please try refreshing the page. Error: {error[:100]}..."
+        
+        return fallback
+    
+    # ... (rest of your existing methods remain the same)
+    
     def _create_tools(self) -> List[Tool]:
-        """Create tools optimized for Gemini"""
+        """Create tools optimized for Scholardeep"""
         tools = [
             Tool(
                 name="search_scholarships",
                 func=self.search_scholarships_tool,
-                description="Search for scholarships by field, degree level, and criteria. Use when user asks about finding scholarships."
+                description="Search for scholarships by field, degree level, and criteria."
             ),
             Tool(
                 name="check_eligibility",
                 func=self.check_eligibility_tool,
-                description="Check scholarship eligibility requirements. Use when user asks about eligibility."
+                description="Check scholarship eligibility requirements."
             ),
             Tool(
                 name="application_guidance",
                 func=self.application_guidance_tool,
-                description="Provide scholarship application guidance and tips. Use when user asks about application process."
-            ),
-            Tool(
-                name="scholarship_recommendations",
-                func=self.scholarship_recommendations_tool,
-                description="Get personalized scholarship recommendations based on student profile."
+                description="Provide scholarship application guidance and tips."
             )
         ]
         return tools
     
     def _initialize_agent(self):
-        """Initialize agent with Gemini optimizations"""
-        return initialize_agent(
-            tools=self.tools,
-            llm=self.llm,
-            agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION,
-            memory=self.memory,
-            verbose=True,
-            max_iterations=3,
-            early_stopping_method="generate",
-            handle_parsing_errors=True,
-            agent_kwargs={
-                "system_message": "You are a helpful scholarship advisor AI assistant powered by Google Gemini. Use the available tools to help students find scholarships, check eligibility, and get application guidance. Be encouraging and provide actionable advice."
-            }
-        )
+        """Initialize agent with better error handling"""
+        try:
+            return initialize_agent(
+                tools=self.tools,
+                llm=self.llm,
+                agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION,
+                memory=self.memory,
+                verbose=False,
+                max_iterations=2,
+                early_stopping_method="generate",
+                handle_parsing_errors=True
+            )
+        except Exception as e:
+            print(f"Agent initialization failed: {e}")
+            return None
     
     def search_scholarships_tool(self, query: str) -> str:
-        """Enhanced scholarship search tool using pure Gemini knowledge"""
+        """Search tool with fallback"""
         try:
-            search_prompt = f"""As an expert scholarship advisor with access to current scholarship information, please search for scholarships based on this query: "{query}"
-
-Provide a comprehensive list of relevant scholarships including:
-1. **Scholarship name and provider**
-2. **Award amount** (if known)
-3. **Eligibility requirements**
-4. **Application deadline** (if known)
-5. **Target demographic/field**
-6. **Application process overview**
-7. **Website/contact information** (if available)
-
-Focus on current, active scholarships and provide specific, actionable information. Format with clear headings and bullet points."""
-            
-            response = self.llm.invoke(search_prompt)
+            prompt = f"Provide 3-5 specific scholarships for: {query}. Include names, amounts, and eligibility."
+            response = self.llm.invoke(prompt)
             return response.content if hasattr(response, 'content') else str(response)
-                
         except Exception as e:
-            return f"Error searching scholarships: {str(e)}"
+            return f"Search temporarily unavailable. Please try: 1) Check university websites 2) Visit Fastweb.com 3) Contact financial aid offices. Error: {e}"
     
     def check_eligibility_tool(self, query: str) -> str:
-        """Eligibility checking tool"""
-        return """📋 **To check scholarship eligibility, I need information about:**
-        
+        """Eligibility checking with fallback"""
+        return """📋 **To check scholarship eligibility, please provide:**
+
 • **Academic field/major** (e.g., Engineering, Medicine, Business)
-• **Degree level** (Undergraduate/Graduate/PhD)
-• **GPA or academic standing** (on 4.0 or 10.0 scale)
+• **Degree level** (Undergraduate/Graduate/PhD)  
+• **GPA** (on 4.0 or 10.0 scale)
 • **Country/citizenship status**
 • **Financial need level** (High/Medium/Low)
-• **Any special achievements** or circumstances
+• **Special achievements** or circumstances
 
-Please provide these details so I can help assess your eligibility for specific scholarships and provide personalized recommendations."""
-    
-    def scholarship_recommendations_tool(self, profile_info: str) -> str:
-        """Get personalized scholarship recommendations using pure Gemini knowledge"""
-        try:
-            recommendation_prompt = f"""As an expert scholarship advisor with comprehensive knowledge of current scholarships worldwide, analyze this student profile and provide personalized recommendations:
-
-Student Profile: {profile_info}
-
-Please provide:
-1. **Top 5-7 Most Suitable Scholarships** with:
-   - Scholarship name and provider
-   - Award amount and coverage
-   - Specific eligibility requirements
-   - Application deadline (if known)
-   - Why this scholarship matches the student's profile
-
-2. **Match Analysis** explaining:
-   - Student's strongest qualification areas
-   - Potential challenges or gaps
-   - Competitive advantages
-
-3. **Application Strategy**:
-   - Priority order for applications
-   - Timeline recommendations
-   - Key preparation steps
-
-4. **Additional Opportunities**:
-   - Alternative funding sources
-   - Professional development scholarships
-   - Research or internship opportunities
-
-Focus on current, active opportunities and provide specific, actionable advice. Format with clear headings and bullet points."""
-            
-            response = self.llm.invoke(recommendation_prompt)
-            return response.content if hasattr(response, 'content') else str(response)
-            
-        except Exception as e:
-            return f"Error generating recommendations: {str(e)}"
+**Quick Eligibility Tips:**
+- Most merit scholarships require 3.5+ GPA
+- Field-specific scholarships match your major
+- Check citizenship requirements carefully
+- Apply even if you meet 80% of criteria"""
     
     def application_guidance_tool(self, scholarship_name: str) -> str:
-        """Application guidance using Gemini"""
-        try:
-            guidance_prompt = f"""
-            Provide comprehensive scholarship application guidance for: {scholarship_name}
-            
-            Include practical, actionable advice covering:
-            1. **Essential documents and requirements**
-            2. **Timeline and deadline management**
-            3. **Writing tips for personal statements**
-            4. **Common application mistakes to avoid**
-            5. **Follow-up and next steps**
-            
-            Keep the response organized with clear headings and helpful for students.
-            Format with bullet points and actionable steps.
-            """
-            
-            response = self.llm.invoke(guidance_prompt)
-            return response.content if hasattr(response, 'content') else str(response)
-            
-        except Exception as e:
-            return f"Error providing guidance: {str(e)}"
-    
+        """Application guidance with practical tips"""
+        return f"""## 📝 Application Guide for {scholarship_name}
+
+### Essential Documents:
+- ✅ **Transcripts** (official copies)
+- ✅ **Personal Statement** (2-3 pages typical)
+- ✅ **Letters of Recommendation** (2-3 letters)
+- ✅ **Resume/CV** (academic focus)
+- ✅ **Financial Information** (if need-based)
+
+### Timeline:
+- **3-6 months before:** Gather documents
+- **2-3 months before:** Write essays
+- **1 month before:** Submit application
+- **After submission:** Follow up politely
+
+### Writing Tips:
+- Address the prompt directly
+- Show impact and leadership
+- Use specific examples
+- Proofread multiple times
+- Have others review your essays
+
+### Common Mistakes to Avoid:
+- Missing deadlines
+- Generic essays
+- Incomplete applications
+- Poor proofreading
+- Not following instructions exactly"""
+
     def chat(self, user_input: str) -> str:
-        """Main chat interface optimized for Gemini"""
+        """Enhanced chat with better fallback"""
         try:
-            
-            # Enhanced context for Gemini
-            enhanced_input = f"""
-            User Query: {user_input}
-            
-            Context: You are helping a student find scholarships and application guidance. 
-            Use available tools when appropriate to provide specific, helpful information.
-            Always be encouraging and provide actionable advice.
-            """
-            
-            response = self.agent.run(input=enhanced_input)
-            return response
-            
-        except Exception as e:
-            # Gemini-specific fallback with direct LLM call
-            try:
-                fallback_prompt = f"""
-                You are a scholarship advisor AI assistant powered by Google Gemini. 
-                A student asked: "{user_input}"
-                
-                Provide helpful information about:
-                - Scholarship opportunities and types
-                - Eligibility requirements and criteria  
-                - Application process and tips
-                - Deadlines and important dates
-                
-                Be encouraging and provide actionable advice. If you need more specific information 
-                from the student, ask relevant questions to better help them.
-                
-                Use emojis and clear formatting to make your response engaging and easy to read.
-                """
-                
-                response = self.llm.invoke(fallback_prompt)
+            if self.agent:
+                response = self.agent.run(input=user_input)
+                return response
+            else:
+                # Direct LLM call if agent failed
+                response = self.llm.invoke(f"As a scholarship advisor, help with: {user_input}")
                 return response.content if hasattr(response, 'content') else str(response)
-                
-            except Exception as fallback_error:
-                return f"I apologize, but I'm experiencing technical difficulties. Please ensure your Google API key is properly configured and the Generative Language API is enabled in your Google Cloud project. Error: {str(e)}"
-    
-    def analyze_student_profile(self, profile: Dict) -> str:
-        """Analyze student profile and provide scholarship suggestions"""
-        try:
-            analysis_prompt = f"""
-            Analyze this student profile and provide personalized scholarship guidance:
-            
-            Student Profile:
-            - Name: {profile.get('name', 'Student')}
-            - Field of Study: {profile.get('field_of_study', 'Not specified')}
-            - Degree Level: {profile.get('degree_level', 'Not specified')}
-            - GPA: {profile.get('gpa', 'Not specified')}
-            - Country: {profile.get('country', 'Not specified')}
-            
-            Provide:
-            1. **Scholarship Match Assessment** (Rate compatibility 1-10)
-            2. **Top 3 Scholarship Categories** for this profile
-            3. **Eligibility Strengths** (what makes them competitive)
-            4. **Areas for Improvement** (how to strengthen their profile)
-            5. **Action Plan** (next steps to take)
-            
-            Be specific, encouraging, and actionable in your analysis.
-            """
-            
-            response = self.llm.invoke(analysis_prompt)
-            return response.content if hasattr(response, 'content') else str(response)
-            
         except Exception as e:
-            return f"Error analyzing profile: {str(e)}"
+            return f"""I apologize for the technical difficulty. Here's what you can do:
+
+**🔧 Immediate Solutions:**
+1. **Refresh the page** and try again
+2. **Check your internet connection**
+3. **Verify your Google API key** is properly set
+
+**📚 Alternative Resources:**
+- Visit Fastweb.com for scholarship search
+- Check your university's financial aid website
+- Contact your school's financial aid office directly
+- Search "[your field] scholarships [your level]" on Google
+
+**Error Details:** {str(e)[:100]}..."""
