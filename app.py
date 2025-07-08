@@ -91,11 +91,7 @@ def main():
         )
         
         # Additional profile fields for better matching
-        gpa = st.number_input("GPA (Optional)", min_value=0.0, max_value=4.0, step=0.1, help="Enter your GPA on a 4.0 scale")
-        financial_need = st.selectbox(
-            "Financial Need Level",
-            ["High", "Medium", "Low", "None"]
-        )
+
         
         if st.button("💾 Save Profile", type="primary"):
             if name.strip():  # Validate that name is provided
@@ -104,9 +100,7 @@ def main():
                     'gender': gender,
                     'field_of_study': field_of_study,
                     'degree_level': degree_level,
-                    'country': country,
-                    'gpa': gpa if gpa > 0 else None,
-                    'financial_need': financial_need
+                    'country': country
                 }
                 st.success("✅ Profile saved!")
                 st.info("👉 Check the 'Eligible Scholarships' tab to see AI-powered recommendations!")
@@ -282,8 +276,7 @@ def main():
                     with col4:
                         st.metric("Country", profile['country'])
                     
-                    if profile.get('gpa'):
-                        st.metric("GPA", f"{profile['gpa']:.1f}/4.0")
+
                     
                 except Exception as e:
                     st.error(f"❌ Error loading scholarships: {str(e)}")
