@@ -91,6 +91,10 @@ def main():
         )
         
         # Additional profile fields for better matching
+        cgpa = st.number_input("CGPA (on a 10.0 scale)", min_value=0.0, max_value=10.0, value=7.5, step=0.01, key="cgpa_input")
+        # Automatically calculate GPA based on CGPA (assuming 10.0 scale to 4.0 scale conversion)
+        gpa_calculated = round(cgpa / 2.5, 2)
+        gpa = st.number_input("GPA (on a 4.0 scale)", min_value=0.0, max_value=4.0, value=gpa_calculated, step=0.01, key="gpa_input")
 
         
         if st.button("💾 Save Profile", type="primary"):
@@ -100,7 +104,9 @@ def main():
                     'gender': gender,
                     'field_of_study': field_of_study,
                     'degree_level': degree_level,
-                    'country': country
+                    'country': country,
+                    'gpa': gpa,
+                    'cgpa': cgpa
                 }
                 st.success("✅ Profile saved!")
                 st.info("👉 Check the 'Eligible Scholarships' tab to see AI-powered recommendations!")
@@ -154,11 +160,7 @@ def main():
             st.info("👈 Fill out your information in the sidebar and click 'Save Profile'")
         else:
             # Add refresh button
-            col1, col2 = st.columns([1, 4])
-            with col1:
-                if st.button("🔄 Refresh Scholarships", key="refresh_scholarships"):
-                    # Force refresh by clearing cache
-                    st.rerun()
+
             
             # Create tabs for different scholarship sources
             source_tab1, source_tab2 = st.tabs(["📋 Database Scholarships", "🤖 AI Recommendations"])
@@ -188,6 +190,16 @@ def main():
                         # Check gender eligibility if not "All"
                         if scholarship['gender_eligibility'] != "All" and profile['gender'] != scholarship['gender_eligibility']:
                             is_eligible = False
+
+                        # Check GPA requirement
+                        if 'gpa_requirement' in scholarship and scholarship['gpa_requirement'] is not None and isinstance(scholarship['gpa_requirement'], (int, float)):
+                            if profile['gpa'] < scholarship['gpa_requirement']:
+                                is_eligible = False
+
+                        # Check CGPA requirement
+                        if 'cgpa_requirement' in scholarship and scholarship['cgpa_requirement'] is not None and isinstance(scholarship['cgpa_requirement'], (int, float)):
+                            if profile['cgpa'] < scholarship['cgpa_requirement']:
+                                is_eligible = False
                         
                         if is_eligible:
                             eligible_scholarships.append(scholarship)
