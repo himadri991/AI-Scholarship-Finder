@@ -1,18 +1,17 @@
+from dotenv import load_dotenv
 import os
 
-# API Keys
-env_vars = {
-    "GROQ_API_KEY": "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",
-    "TAVILY_API_KEY": "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",
-    "GOOGLE_API_KEY": "AIzaSyDwofVzJMk150Xz2FGq0DiLwfs_bsOcWYk",
-    "GOOGLE_CSE_ID": "b435d735c20ac472b",
-    "PINECONE_API_KEY": "pcsk_6Z5pw9_Na1i9SYu7WLthh8q6xo8B2JPSA7K4MseBC99RyqRkXuyZUsVCYHcCn7kf4FUpqm",
-    "PINECONE_ENVIRONMENT": "us-east-1"
-}
+# Load .env file
+load_dotenv()
 
-# Write .env file
-with open('.env', 'w') as f:
-    for key, value in env_vars.items():
-        f.write(f"{key}={value}\n")
+# Access your API keys securely
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+GOOGLE_CSE_ID = os.getenv("GOOGLE_CSE_ID")
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
+PINECONE_ENVIRONMENT = os.getenv("PINECONE_ENVIRONMENT")
 
-print(".env file created successfully!") 
+# Optional: Validate keys are loaded
+if not all([GROQ_API_KEY, TAVILY_API_KEY, GOOGLE_API_KEY, GOOGLE_CSE_ID, PINECONE_API_KEY, PINECONE_ENVIRONMENT]):
+    raise EnvironmentError("Some environment variables are missing. Check your .env file.")
