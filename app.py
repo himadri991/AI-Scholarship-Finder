@@ -24,7 +24,7 @@ from langchain_agent import ScholarshipChatAgent
 
 # Page configuration - UPDATED FOR GEMINI
 st.set_page_config(
-    page_title="ScholarDeep AI Scholarship Finder - Powered by Google Gemini",
+    page_title="ScholarDeep AI Scholarship Finder - Powered by Scholardeep",
     page_icon="🎓",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -48,13 +48,13 @@ if 'messages' not in st.session_state:
 def main():
     # UPDATED TITLE AND INFO FOR GEMINI
     st.title("🎓 AI Scholarship Finder")
-    st.markdown("**Powered by Google Gemini** - Advanced AI scholarship discovery!")
+    st.markdown("**Powered by Scholardeep** - Advanced AI scholarship discovery!")
     
     # Display model info - UPDATED FOR GEMINI
     with st.expander("🤖 About this AI"):
         st.write("""
         This scholarship finder uses:
-        - **Google Gemini 1.5 Pro** for advanced natural language understanding
+        - **Scholardeep** for advanced natural language understanding
         - **Real-time web access** for the latest scholarship opportunities
         - **Intelligent matching** based on your academic profile
         - **Personalized recommendations** using AI analysis
@@ -118,7 +118,7 @@ def main():
     
     with tab1:
         # UPDATED HEADER FOR GEMINI
-        st.header("💬 Chat with Google Gemini Assistant")
+        st.header("💬 Chat with Scholardeep Assistant")
         
         # Display chat messages
         for message in st.session_state.messages:
@@ -134,7 +134,7 @@ def main():
             
             # Get AI response - UPDATED SPINNER TEXT FOR GEMINI
             with st.chat_message("assistant"):
-                with st.spinner("🤖 Google Gemini is analyzing your request..."):
+                with st.spinner("🤖 Scholardeep is analyzing your request..."):
                     try:
                         if st.session_state.chat_agent:
                             # Get response from agent
@@ -166,7 +166,7 @@ def main():
                     # Force refresh by clearing cache
                     st.rerun()
             
-            with st.spinner("🤖 Google Gemini is finding scholarships for you..."):
+            with st.spinner("🤖 Scholardeep is finding scholarships for you..."):
                 try:
                     profile = st.session_state.student_profile
                     
@@ -264,7 +264,7 @@ Please use current scholarship information and be specific about opportunities a
                             - Portfolio (for creative fields)
                             """)
                     else:
-                        st.error("❌ Google Gemini AI model not available. Please check your configuration.")
+                        st.error("❌ Scholardeep AI model not available. Please check your configuration.")
                         st.info("🔧 Ensure GOOGLE_API_KEY is set in your .env.local file")
                         
                 except Exception as e:
@@ -302,7 +302,7 @@ Please use current scholarship information and be specific about opportunities a
             if not search_query:
                 st.warning("⚠️ Please enter a search query")
             else:
-                with st.spinner("🤖 Google Gemini is searching for scholarships..."):
+                with st.spinner("🤖 Scholardeep is searching for scholarships..."):
                     try:
                         # Create comprehensive search prompt for Gemini
                         field_filter = f" specifically for {search_field}" if search_field != "All" else ""
@@ -379,7 +379,7 @@ Please focus on current, active scholarships and provide specific, actionable in
                                     if st.button(f"🔍 {related_search}", key=f"related_{i}"):
                                         st.rerun()
                         else:
-                            st.error("❌ Google Gemini AI model not available. Please check your configuration.")
+                            st.error("❌ Scholardeep AI model not available. Please check your configuration.")
                         
                     except Exception as e:
                         st.error(f"❌ Search error: {str(e)}")
@@ -402,7 +402,7 @@ Please focus on current, active scholarships and provide specific, actionable in
     st.divider()
     st.markdown("""
     <div style='text-align: center; color: #666; padding: 20px;'>
-        <p>🎓 <strong>AI Scholarship Finder</strong> - Powered by Google Gemini</p>
+        <p>🎓 <strong>AI Scholarship Finder</strong> - Powered by Scholardeep</p>
         <p>Making scholarship discovery smarter and more accessible</p>
     </div>
     """, unsafe_allow_html=True)

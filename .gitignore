@@ -8,3 +8,4 @@ __pycache__/
 
 # Windows batch file
 run_app.bat
+.vercel

@@ -1,10 +1,10 @@
 # AI Scholarship Finder
 
-An intelligent scholarship search and recommendation application powered by LangChain and Google Gemini.
+An intelligent scholarship search and recommendation application powered by LangChain and Scholardeep.
 
 ## Features
 
-- **AI Chatbot**: Chat with Google Gemini about scholarships, application guidance, and eligibility requirements
+- **AI Chatbot**: Chat with Scholardeep about scholarships, application guidance, and eligibility requirements
 - **Semantic Search**: Find relevant scholarships using AI-powered search
 - **Personalized Recommendations**: Get scholarship recommendations based on your academic profile
 - **Application Guidance**: Receive step-by-step guidance for applying to scholarships
@@ -124,7 +124,7 @@ If you see error messages about API keys:
 ## Technologies Used
 
 - **LangChain**: Framework for building LLM applications
-- **Google Gemini**: Large language model for natural language understanding
+- **Scholardeep**: Large language model for natural language understanding
 - **Streamlit**: Web interface for the scholarship finder
 - **Flask**: Web server for the landing page
 - **Python**: Programming language 
