@@ -166,21 +166,139 @@ def main():
                     # Force refresh by clearing cache
                     st.rerun()
             
-            with st.spinner("🤖 Scholardeep is finding scholarships for you..."):
+            # Create tabs for different scholarship sources
+            source_tab1, source_tab2 = st.tabs(["📋 Database Scholarships", "🤖 AI Recommendations"])
+            
+            with source_tab1:
+                st.subheader("📋 Eligible Scholarships from Database")
                 try:
+                    # Load scholarships from JSON file
+                    with open("scholarships.json", "r") as f:
+                        scholarships = json.load(f)
+                    
                     profile = st.session_state.student_profile
                     
-                    # Debug information (expandable)
-                    # with st.expander("🔍 Debug Info (Click to expand)", expanded=False):
-                        # st.write("**Profile Data:**", profile)
-                        # st.write("**Chat Agent Status:**", "✅ Ready" if st.session_state.chat_agent else "❌ Not Ready")
-                        # if st.session_state.chat_agent:
-                            # st.write("**Gemini Model:**", st.session_state.chat_agent.llm.model)
+                    # Filter eligible scholarships
+                    eligible_scholarships = []
+                    for scholarship in scholarships:
+                        is_eligible = True
+                        
+                        # Check degree level
+                        if profile['degree_level'] not in scholarship['degree_level']:
+                            is_eligible = False
+                        
+                        # Check field of study
+                        if profile['field_of_study'] not in scholarship['field_of_study']:
+                            is_eligible = False
+                        
+                        # Check gender eligibility if not "All"
+                        if scholarship['gender_eligibility'] != "All" and profile['gender'] != scholarship['gender_eligibility']:
+                            is_eligible = False
+                        
+                        if is_eligible:
+                            eligible_scholarships.append(scholarship)
                     
-                    # Get scholarships using the new method
-                    if st.session_state.chat_agent:
-                        # FIXED: Properly formatted f-string for Gemini prompt
-                        gemini_prompt = f"""As an expert scholarship advisor with access to current scholarship information, provide a comprehensive analysis of scholarship opportunities for this student profile:
+                    # Display eligible scholarships count
+                    if eligible_scholarships:
+                        st.success(f"✅ Found {len(eligible_scholarships)} eligible scholarships for you!")
+                    else:
+                        st.warning("⚠️ No eligible scholarships found in our database for your profile.")
+                        st.info("Try checking the AI Recommendations tab for more personalized options.")
+                    
+                    # Display eligible scholarships in a more structured way
+                    for scholarship in eligible_scholarships:
+                        with st.expander(f"🎓 {scholarship['scholarship_name']}"):
+                            st.markdown(f"**Provider:** {scholarship['providing_body']}")
+                            st.markdown(f"**Degree Level:** {', '.join(scholarship['degree_level'])}")
+                            st.markdown(f"**Field of Study:** {', '.join(scholarship['field_of_study'])}")
+                            st.markdown(f"**Gender Eligibility:** {scholarship['gender_eligibility']}")
+                            st.markdown(f"**GPA Requirement:** {scholarship['gpa_requirement']}")
+                            st.markdown(f"**Description:** {scholarship['brief_description']}")
+                            st.markdown(f"**Link:** [{scholarship['link']}]({scholarship['link']})")
+                            
+                            # Add eligibility match indicators
+                            st.success("✅ You are eligible for this scholarship!")
+                            
+                            # Show matching criteria
+                            st.markdown("**Matching Criteria:**")
+                            st.markdown(f"- ✓ Your degree level ({profile['degree_level']}) matches the required level")
+                            st.markdown(f"- ✓ Your field of study ({profile['field_of_study']}) matches the required fields")
+                            if scholarship['gender_eligibility'] == "All":
+                                st.markdown(f"- ✓ This scholarship is available for all genders")
+                            else:
+                                st.markdown(f"- ✓ Your gender ({profile['gender']}) matches the eligibility requirement")
+                            
+                            # Add apply button
+                            st.markdown(f"[🔗 Apply Now]({scholarship['link']})")
+                    
+                    # Add toggle to show all scholarships
+                    if st.checkbox("Show all scholarships (including non-eligible)"):
+                        st.subheader("All Available Scholarships")
+                        for scholarship in scholarships:
+                            # Skip already shown eligible scholarships
+                            if scholarship in eligible_scholarships:
+                                continue
+                                
+                            with st.expander(f"🎓 {scholarship['scholarship_name']}"):
+                                st.markdown(f"**Provider:** {scholarship['providing_body']}")
+                                st.markdown(f"**Degree Level:** {', '.join(scholarship['degree_level'])}")
+                                st.markdown(f"**Field of Study:** {', '.join(scholarship['field_of_study'])}")
+                                st.markdown(f"**Gender Eligibility:** {scholarship['gender_eligibility']}")
+                                st.markdown(f"**GPA Requirement:** {scholarship['gpa_requirement']}")
+                                st.markdown(f"**Description:** {scholarship['brief_description']}")
+                                st.markdown(f"**Link:** [{scholarship['link']}]({scholarship['link']})")
+                                
+                                # Add eligibility check
+                                reasons = []
+                                
+                                # Check degree level
+                                if profile['degree_level'] not in scholarship['degree_level']:
+                                    reasons.append(f"Your degree level ({profile['degree_level']}) doesn't match the required level ({', '.join(scholarship['degree_level'])})")
+                                
+                                # Check field of study
+                                if profile['field_of_study'] not in scholarship['field_of_study']:
+                                    reasons.append(f"Your field of study ({profile['field_of_study']}) doesn't match the required fields ({', '.join(scholarship['field_of_study'])})")
+                                
+                                # Check gender eligibility if not "All"
+                                if scholarship['gender_eligibility'] != "All" and profile['gender'] != scholarship['gender_eligibility']:
+                                    reasons.append(f"This scholarship is only available for {scholarship['gender_eligibility']} students")
+                                
+                                # Display eligibility status
+                                st.warning("⚠️ You may not be eligible for this scholarship")
+                                st.markdown("**Reasons:**")
+                                for reason in reasons:
+                                    st.markdown(f"- {reason}")
+                    
+                    # Add profile summary
+                    st.divider()
+                    st.subheader("📋 Your Profile Summary")
+                    col1, col2, col3, col4 = st.columns(4)
+                    with col1:
+                        st.metric("Field", profile['field_of_study'])
+                    with col2:
+                        st.metric("Level", profile['degree_level'])
+                    with col3:
+                        st.metric("Gender", profile['gender'])
+                    with col4:
+                        st.metric("Country", profile['country'])
+                    
+                    if profile.get('gpa'):
+                        st.metric("GPA", f"{profile['gpa']:.1f}/4.0")
+                    
+                except Exception as e:
+                    st.error(f"❌ Error loading scholarships: {str(e)}")
+                    st.info("🔄 Please try refreshing the page or check if the scholarships.json file exists.")
+            
+            with source_tab2:
+                st.subheader("🤖 AI-Powered Scholarship Recommendations")
+                with st.spinner("🤖 Scholardeep is finding scholarships for you..."):
+                    try:
+                        profile = st.session_state.student_profile
+                        
+                        # Get scholarships using the new method
+                        if st.session_state.chat_agent:
+                            # FIXED: Properly formatted f-string for Gemini prompt
+                            gemini_prompt = f"""As an expert scholarship advisor with access to current scholarship information, provide a comprehensive analysis of scholarship opportunities for this student profile:
 
 **Student Profile:**
 - Name: {profile['name']}
@@ -216,72 +334,56 @@ def main():
    - Tips for success
 
 Please use current scholarship information and be specific about opportunities available in {profile['country']} and internationally for {profile['field_of_study']} students at the {profile['degree_level']} level. Format your response with clear headings, bullet points, and emoji indicators for easy reading."""
-                        
-                        # Get comprehensive response from Gemini
-                        gemini_response = st.session_state.chat_agent.llm.invoke(gemini_prompt)
-                        gemini_analysis = gemini_response.content if hasattr(gemini_response, 'content') else str(gemini_response)
-                        
-                        # Display the comprehensive analysis
-                        st.markdown(gemini_analysis)
-                        
-                        # Success message
-                        st.success("✅ Scholarships loaded successfully!")
-                        
-                        # Add additional helpful information
-                        st.divider()
-                        st.subheader("📋 Quick Profile Summary")
-                        col1, col2, col3, col4 = st.columns(4)
-                        with col1:
-                            st.metric("Field", profile['field_of_study'])
-                        with col2:
-                            st.metric("Level", profile['degree_level'])
-                        with col3:
-                            st.metric("Gender", profile['gender'])
-                        with col4:
-                            st.metric("Country", profile['country'])
-                        
-                        if profile.get('gpa'):
-                            st.metric("GPA", f"{profile['gpa']:.1f}/4.0")
-                        
-                        # Add tips section
-                        with st.expander("💡 Application Tips"):
-                            st.write("""
-                            **📝 Application Best Practices:**
-                            - Start applications early (3-6 months before deadlines)
-                            - Tailor each application to the specific scholarship
-                            - Highlight achievements relevant to the scholarship's mission
-                            - Get strong letters of recommendation
-                            - Proofread all materials carefully
-                            - Follow application instructions exactly
-                            - Apply to multiple scholarships to increase chances
                             
-                            **📚 Documents Usually Required:**
-                            - Academic transcripts
-                            - Personal statement/essay
-                            - Letters of recommendation
-                            - Resume/CV
-                            - Financial information (for need-based scholarships)
-                            - Portfolio (for creative fields)
-                            """)
-                    else:
-                        st.error("❌ Scholardeep AI model not available. Please check your configuration.")
-                        st.info("🔧 Ensure GOOGLE_API_KEY is set in your .env.local file")
+                            # Get comprehensive response from Gemini
+                            gemini_response = st.session_state.chat_agent.llm.invoke(gemini_prompt)
+                            gemini_analysis = gemini_response.content if hasattr(gemini_response, 'content') else str(gemini_response)
+                            
+                            # Display the comprehensive analysis
+                            st.markdown(gemini_analysis)
+                            
+                            # Success message
+                            st.success("✅ AI recommendations loaded successfully!")
+                            
+                            # Add tips section
+                            with st.expander("💡 Application Tips"):
+                                st.write("""
+                                **📝 Application Best Practices:**
+                                - Start applications early (3-6 months before deadlines)
+                                - Tailor each application to the specific scholarship
+                                - Highlight achievements relevant to the scholarship's mission
+                                - Get strong letters of recommendation
+                                - Proofread all materials carefully
+                                - Follow application instructions exactly
+                                - Apply to multiple scholarships to increase chances
+                                
+                                **📚 Documents Usually Required:**
+                                - Academic transcripts
+                                - Personal statement/essay
+                                - Letters of recommendation
+                                - Resume/CV
+                                - Financial information (for need-based scholarships)
+                                - Portfolio (for creative fields)
+                                """)
+                        else:
+                            st.error("❌ Scholardeep AI model not available. Please check your configuration.")
+                            st.info("🔧 Ensure GOOGLE_API_KEY is set in your .env.local file")
+                            
+                    except Exception as e:
+                        st.error(f"❌ Error analyzing scholarships: {str(e)}")
+                        st.info("🔄 Please try refreshing the page or check your internet connection.")
                         
-                except Exception as e:
-                    st.error(f"❌ Error analyzing scholarships: {str(e)}")
-                    st.info("🔄 Please try refreshing the page or check your internet connection.")
-                    
-                    # Show fallback content on error
-                    st.markdown("""
-                    ## 📚 While we fix this, here are general scholarship tips:
-                    
-                    1. **University Financial Aid Office** - Your first stop for institutional aid
-                    2. **Fastweb.com** - Comprehensive scholarship database  
-                    3. **Professional Associations** - Field-specific opportunities
-                    4. **Government Websites** - National and regional programs
-                    5. **Local Community Foundations** - Often overlooked opportunities
-                    6. **Company Scholarships** - Many corporations offer educational funding
-                    """)
+                        # Show fallback content on error
+                        st.markdown("""
+                        ## 📚 While we fix this, here are general scholarship tips:
+                        
+                        1. **University Financial Aid Office** - Your first stop for institutional aid
+                        2. **Fastweb.com** - Comprehensive scholarship database  
+                        3. **Professional Associations** - Field-specific opportunities
+                        4. **Government Websites** - National and regional programs
+                        5. **Local Community Foundations** - Often overlooked opportunities
+                        6. **Company Scholarships** - Many corporations offer educational funding
+                        """)
     
     with tab3:
         st.header("🔍 Search Scholarships")

@@ -1,0 +1,1002 @@
+[
+  {
+    "scholarship_name": "Prime Minister's Research Fellowship (PMRF)",
+    "providing_body": "MHRD, Government of India",
+    "degree_level": ["PhD"],
+    "field_of_study": ["Science", "Technology", "Engineering", "Agriculture", "Medicine"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 8.0 CGPA for direct entry students from specified institutions.",
+    "brief_description": "A prestigious fellowship to attract talent into doctoral programs for carrying out research in cutting-edge science and technology domains, with a focus on national priorities.",
+    "link": "https://www.pmrf.in/"
+  },
+  {
+    "scholarship_name": "AICTE Post Graduate Scholarship",
+    "providing_body": "All India Council for Technical Education (AICTE)",
+    "degree_level": ["Postgraduate"],
+    "field_of_study": ["Engineering", "Technology", "Architecture", "Pharmacy"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Must have a valid GATE/CEED score.",
+    "brief_description": "A scholarship of Rs. 12,400 per month awarded to full-time GATE/CEED qualified students admitted to AICTE approved postgraduate programs.",
+    "link": "https://www.aicte-india.org/schemes/students-development-schemes/PG-Scholarship-Scheme"
+  },
+  {
+    "scholarship_name": "Reliance Foundation Undergraduate Scholarships",
+    "providing_body": "Reliance Foundation",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Awarded on a merit-cum-means basis to meritorious students.",
+    "brief_description": "Up to 5,000 undergraduate scholarships are awarded to support students in their studies. The program aims to support students from all corners of the country.",
+    "link": "https://www.scholarships.reliancefoundation.org/undergraduate-scholarships"
+  },
+  {
+    "scholarship_name": "Reliance Foundation Postgraduate Scholarships",
+    "providing_body": "Reliance Foundation",
+    "degree_level": ["Postgraduate"],
+    "field_of_study": ["Computer Science", "Artificial Intelligence", "Mathematics & Computing", "Engineering", "Life Sciences"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Merit-based selection.",
+    "brief_description": "Provides support to students pursuing postgraduate studies in key academic fields. The total scholarship amount can be up to ₹6 Lakhs over the duration of the degree.",
+    "link": "https://www.scholarships.reliancefoundation.org/postgraduate-scholarships"
+  },
+  {
+    "scholarship_name": "Swami Dayanand Education Foundation Scholarship",
+    "providing_body": "Swami Dayanand Education Foundation",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Engineering", "Medicine"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Merit-based and requires a good academic record.",
+    "brief_description": "Provides financial support for students pursuing undergraduate courses in professional fields like engineering and medicine in India.",
+    "link": "https://www.sdef.org/scholarship.asp"
+  },
+  {
+    "scholarship_name": "ICSSR Doctoral Research Fellowship",
+    "providing_body": "Indian Council of Social Science Research (ICSSR)",
+    "degree_level": ["PhD"],
+    "field_of_study": ["Social Sciences"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Requires a Master's degree with a first or second class from a recognized university.",
+    "brief_description": "Supports doctoral students in social sciences with a monthly stipend and contingency grant to encourage research.",
+    "link": "https://icssr.org/doctoral-fellowship"
+  },
+  {
+    "scholarship_name": "Swami Vivekananda Single Girl Child Scholarship for Research in Social Sciences",
+    "providing_body": "University Grants Commission (UGC)",
+    "degree_level": ["PhD"],
+    "field_of_study": ["Social Sciences"],
+    "gender_eligibility": "Female",
+    "gpa_requirement": "Must be registered for a full-time PhD program in Social Sciences.",
+    "brief_description": "Aimed to promote research in social sciences for single girl children in Indian society and to support their higher education.",
+    "link": "https://www.ugc.ac.in/svsgc/"
+  },
+  {
+    "scholarship_name": "Jawaharlal Nehru Memorial Fund Scholarships",
+    "providing_body": "Jawaharlal Nehru Memorial Fund",
+    "degree_level": ["PhD"],
+    "field_of_study": ["Indian History and Civilization", "Sociology", "Comparative Studies in Religion & Culture", "Economics", "Ecology & Environment"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Requires a minimum of 60% marks at the postgraduate level.",
+    "brief_description": "Awarded to PhD scholars for research on specified topics related to Indian society and culture.",
+    "link": "https://www.jnmf.in/scholarship.html"
+  },
+  {
+    "scholarship_name": "Post-Matric Scholarship for SC/ST Students",
+    "providing_body": "State/UT Governments, funded by Government of India",
+    "degree_level": ["Undergraduate", "Postgraduate", "PhD"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Varies by state/UT; typically based on passing the previous qualifying examination.",
+    "brief_description": "A centrally sponsored scheme to provide financial assistance to Scheduled Caste (SC) and Scheduled Tribe (ST) students for studies beyond the matriculation stage.",
+    "link": "https://scholarships.gov.in/"
+  },
+  {
+    "scholarship_name": "Lata Mangeshkar Dance & Music Scholarship Scheme",
+    "providing_body": "Indian Council for Cultural Relations (ICCR)",
+    "degree_level": ["Undergraduate", "Postgraduate", "PhD"],
+    "field_of_study": ["Arts", "Indian Culture (dance, music, theatre, performing art, etc.)"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Varies by the chosen university and course requirements.",
+    "brief_description": "A scholarship for international students to pursue studies in Indian culture at various Indian universities and institutes.",
+    "link": "https://www.iccr.gov.in/scholarships/lata-mangeshkar-dance-music-scholarship-scheme"
+  },
+  {
+    "scholarship_name": "Ahimsa Fellowship",
+    "providing_body": "Ahimsa Fellowship Program",
+    "degree_level": ["Fellowship (for graduates)"],
+    "field_of_study": ["Law", "Public Policy", "Advocacy", "Social Sciences"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Not specified; selection is based on commitment to animal protection.",
+    "brief_description": "A professional development program for individuals passionate about animal welfare and protection, aiming to create future leaders in the field.",
+    "link": "https://www.ahimsafellowship.org/"
+  },
+  {
+    "scholarship_name": "GATE Financial Assistance",
+    "providing_body": "Ministry of Education, Government of India",
+    "degree_level": ["Postgraduate"],
+    "field_of_study": ["Engineering", "Technology", "Computer Science"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "A valid GATE (Graduate Aptitude Test in Engineering) score is mandatory.",
+    "brief_description": "Provides a monthly stipend to students who have qualified GATE and are enrolled in M.E./M.Tech programs at centrally funded technical institutions.",
+    "link": "https://gate.iitk.ac.in/financial_assistance.html"
+  },
+  {
+    "scholarship_name": "Keep India Smiling Foundational Scholarship Programme",
+    "providing_body": "Colgate-Palmolive (India) Ltd.",
+    "degree_level": ["Undergraduate", "Vocational Courses"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 60% in the previous qualifying examination.",
+    "brief_description": "Provides financial aid to students from economically weaker sections for pursuing their education.",
+    "link": "https://www.colgate.com/en-in/smile-karo-aur-shuru-ho-jao/keep-india-smiling"
+  },
+  {
+    "scholarship_name": "HDFC Bank Parivartan's ECSS Programme",
+    "providing_body": "HDFC Bank",
+    "degree_level": ["School", "Undergraduate", "Postgraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on academic merit and financial need.",
+    "brief_description": "An initiative to support meritorious and needy students belonging to underprivileged sections of the society.",
+    "link": "https://www.hdfcbank.com/personal/about-us/news-room/press-release/2023/q4/hdfc-bank-parivartan-opens-application-for-the-9th-edition-of-its-flagship-ecss-programme"
+  },
+  {
+    "scholarship_name": "Kotak Kanya Scholarship",
+    "providing_body": "Kotak Mahindra Group",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Professional courses like Engineering, Medicine, Architecture, Design, etc."],
+    "gender_eligibility": "Female",
+    "gpa_requirement": "Minimum 75% marks in the previous qualifying examination.",
+    "brief_description": "A scholarship program to empower meritorious girl students from underprivileged sections of society to pursue professional graduation courses.",
+    "link": "https://www.kotak.com/en/about-us/corporate-social-responsibility/education/kotak-kanya-scholarship.html"
+  },
+  {
+    "scholarship_name": "Aditya Birla Capital Scholarship",
+    "providing_body": "Aditya Birla Capital Foundation",
+    "degree_level": ["School", "Undergraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 60% in the previous qualifying examination.",
+    "brief_description": "A scholarship program to provide financial assistance to students from underprivileged families to continue their education.",
+    "link": "https://www.adityabirlacapital.com/sustainability/our-initiatives/aditya-birla-capital-scholarships"
+  },
+  {
+    "scholarship_name": "Infosys Foundation - Aarohan Social Innovation Awards",
+    "providing_body": "Infosys Foundation",
+    "degree_level": ["Award (not a traditional scholarship)"],
+    "field_of_study": ["Innovation in Social Impact"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Not applicable; based on the social innovation presented.",
+    "brief_description": "An award to recognize and reward individuals, teams or NGOs developing unique solutions for the social sector.",
+    "link": "https://www.infosys.com/infosys-foundation/aarohan-social-innovation-awards.html"
+  },
+  {
+    "scholarship_name": "Wipro Santoor Women's Scholarship",
+    "providing_body": "Wipro Consumer Care and Wipro Cares",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Arts", "Science", "Commerce"],
+    "gender_eligibility": "Female",
+    "gpa_requirement": "Must have passed Class 12 from a government school.",
+    "brief_description": "Supports deserving female students from underprivileged backgrounds for their higher education.",
+    "link": "https://www.santoorscholarships.com/"
+  },
+  {
+    "scholarship_name": "ONGC Scholarship to Meritorious SC/ST Students",
+    "providing_body": "Oil and Natural Gas Corporation (ONGC)",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["Engineering", "MBBS", "MBA", "Geology", "Geophysics"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 60% marks in the qualifying examination.",
+    "brief_description": "A scholarship to support meritorious SC/ST students pursuing professional courses.",
+    "link": "https://ongcscholar.org/"
+  },
+  {
+    "scholarship_name": "SAIL Scholarship for SC/ST Students",
+    "providing_body": "Steel Authority of India Limited (SAIL)",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Engineering", "Medicine", "Technical courses"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on performance in Class 12.",
+    "brief_description": "Provides financial aid to meritorious SC/ST students from operational areas of SAIL plants/units.",
+    "link": "https://www.sail.co.in/"
+  },
+  {
+    "scholarship_name": "NTPC Scholarship Scheme",
+    "providing_body": "National Thermal Power Corporation (NTPC)",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Engineering"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on performance in the first year of engineering.",
+    "brief_description": "Aims to support meritorious students from SC/ST/PC categories pursuing engineering.",
+    "link": "https://www.ntpc.co.in/en/corporate-citizenship/sustainability/csr-scholarship"
+  },
+  {
+    "scholarship_name": "Indian Oil Corporation Ltd. (IOCL) Scholarship",
+    "providing_body": "Indian Oil Corporation Ltd.",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Engineering", "MBBS", "MBA"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on merit in the qualifying examination.",
+    "brief_description": "Provides scholarships to students pursuing professional courses at a graduate level.",
+    "link": "https://iocl.com/scholarships"
+  },
+  {
+    "scholarship_name": "L'Oréal India For Young Women In Science Scholarship",
+    "providing_body": "L'Oréal India",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Science"],
+    "gender_eligibility": "Female",
+    "gpa_requirement": "Minimum 85% in PCM/PCB in Class 12.",
+    "brief_description": "Encourages young women to pursue careers in science by providing them with financial assistance.",
+    "link": "https://www.loreal.com/en/india/articles/commitments/for-young-women-in-science-scholarship/"
+  },
+  {
+    "scholarship_name": "Siemens Scholarship Program",
+    "providing_body": "Siemens India",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Engineering"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 60% aggregate in SSC and minimum 50% aggregate in HSC.",
+    "brief_description": "Supports meritorious engineering students from economically disadvantaged families.",
+    "link": "https://new.siemens.com/in/en/company/sustainability/corporate-citizenship/siemens-scholarship-program.html"
+  },
+  {
+    "scholarship_name": "Rolls-Royce Unnati Scholarships for Women in Engineering",
+    "providing_body": "Rolls-Royce India",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Engineering (Aerospace, Marine, Electronics, Computer Science, etc.)"],
+    "gender_eligibility": "Female",
+    "gpa_requirement": "Based on academic merit.",
+    "brief_description": "Aims to support and encourage women to pursue a career in engineering.",
+    "link": "https://india.rolls-royce.com/sustainability/community-investment/skills-and-education.aspx"
+  },
+  {
+    "scholarship_name": "Adobe India Women in Technology Scholarship",
+    "providing_body": "Adobe India",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["Computer Science", "Computer Engineering", "Information Science"],
+    "gender_eligibility": "Female",
+    "gpa_requirement": "Based on academic record.",
+    "brief_description": "Recognizes and supports outstanding female students in the field of technology.",
+    "link": "https://www.adobe.com/in/lead/creativecloud/women-in-tech.html"
+  },
+  {
+    "scholarship_name": "Google Scholarships",
+    "providing_body": "Google",
+    "degree_level": ["Undergraduate", "Postgraduate", "PhD"],
+    "field_of_study": ["Computer Science", "Technology"],
+    "gender_eligibility": "All (with some scholarships specifically for women and underrepresented groups)",
+    "gpa_requirement": "Varies by scholarship, but a strong academic record is required.",
+    "brief_description": "Offers a variety of scholarships to support students in technology and computer science.",
+    "link": "https://buildyourfuture.withgoogle.com/scholarships"
+  },
+  {
+    "scholarship_name": "Dr. Reddy's Foundation Sashakt Scholarship",
+    "providing_body": "Dr. Reddy's Foundation",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Science"],
+    "gender_eligibility": "Female",
+    "gpa_requirement": "Strong academic record.",
+    "brief_description": "Aims to encourage young women from economically challenged backgrounds to pursue a career in science.",
+    "link": "https://www.drreddys.com/sashakt-scholarship/"
+  },
+  {
+    "scholarship_name": "Nationwide Education and Scholarship Test (NEST)",
+    "providing_body": "SEMCI India",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Science", "Engineering", "Medicine"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on performance in the NEST exam.",
+    "brief_description": "A scholarship test for students pursuing science, engineering, and medical courses.",
+    "link": "https://www.nest.net.in/"
+  },
+  {
+    "scholarship_name": "All India Meritorious Scholarship Test (AIMST)",
+    "providing_body": "AIMST Foundation",
+    "degree_level": ["School", "Undergraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on performance in the AIMST exam.",
+    "brief_description": "A national level scholarship test to identify and support meritorious students.",
+    "link": "https://www.aimst.org.in/"
+  },
+  {
+    "scholarship_name": "Prime Minister's Scholarship Scheme for Central Armed Police Forces and Assam Rifles",
+    "providing_body": "Ministry of Home Affairs, Government of India",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Professional courses like Engineering, Medicine, Dental, Veterinary, MBA, MCA, etc."],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 60% in the qualifying examination.",
+    "brief_description": "A scholarship for the dependent wards/widows of CAPFs & AR personnel.",
+    "link": "https://scholarships.gov.in/"
+  },
+  {
+    "scholarship_name": "National Talent Search Examination (NTSE)",
+    "providing_body": "National Council of Educational Research and Training (NCERT)",
+    "degree_level": ["School (Class X)"],
+    "field_of_study": ["Science", "Social Science", "Humanities", "Commerce", "Fine Arts"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on performance in the NTSE exam.",
+    "brief_description": "A national-level scholarship program to identify and nurture talented students.",
+    "link": "https://ncert.nic.in/ntse.php"
+  },
+  {
+    "scholarship_name": "INSPIRE Scholarship",
+    "providing_body": "Department of Science & Technology (DST), Government of India",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["Basic and Natural Sciences"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Top 1% in the 12th board examinations.",
+    "brief_description": "A scholarship to attract talented youth to the study of science at an early age and build the required critical human resource pool for strengthening and expanding the S&T system and R&D base.",
+    "link": "https://www.online-inspire.gov.in/"
+  },
+  {
+    "scholarship_name": "Merit-cum-Means Scholarship for Professional and Technical Courses",
+    "providing_body": "Ministry of Minority Affairs, Government of India",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["Professional and Technical courses"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 50% marks in the previous final examination.",
+    "brief_description": "A scholarship for poor and meritorious students belonging to minority communities to pursue professional and technical courses.",
+    "link": "https://scholarships.gov.in/"
+  },
+  {
+    "scholarship_name": "Central Sector Scheme of Scholarship for College and University Students",
+    "providing_body": "Department of Higher Education, Ministry of Education, Government of India",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Above 80th percentile of successful candidates in the relevant stream from a particular Board of Examination in Class XII.",
+    "brief_description": "A scholarship to provide financial assistance to meritorious students from low-income families to meet a part of their day-to-day expenses while pursuing higher studies.",
+    "link": "https://scholarships.gov.in/"
+  },
+  {
+    "scholarship_name": "IET India Scholarship Awards",
+    "providing_body": "The Institution of Engineering and Technology (IET)",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Engineering"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on academic performance and other criteria.",
+    "brief_description": "A scholarship award for undergraduate engineering students in India to reward their creativity, innovation, leadership and excellence.",
+    "link": "https://scholarships.theiet.in/"
+  },
+  {
+    "scholarship_name": "Glow & Lovely Foundation Scholarship",
+    "providing_body": "Glow & Lovely Foundation",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "Female",
+    "gpa_requirement": "Minimum 60% in 10th and 12th standard.",
+    "brief_description": "A scholarship to empower women to pursue their aspirations through education.",
+    "link": "https://www.glowandlovelycareers.in/en/scholarships.html"
+  },
+  {
+    "scholarship_name": "Sitaram Jindal Foundation Scholarship",
+    "providing_body": "Sitaram Jindal Foundation",
+    "degree_level": ["School", "Undergraduate", "Postgraduate", "Diploma"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Varies based on the course.",
+    "brief_description": "A scholarship scheme to provide financial assistance to meritorious students from economically weaker sections of the society.",
+    "link": "https://www.sitaramjindalfoundation.org/scholarships-for-students-in-india.php"
+  },
+  {
+    "scholarship_name": "Legrand Empowering Scholarship Program",
+    "providing_body": "Legrand India",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["B.Tech", "B.E.", "B.Arch"],
+    "gender_eligibility": "Female",
+    "gpa_requirement": "Minimum 70% in Class 10th and 12th.",
+    "brief_description": "A scholarship to support meritorious girl students to pursue a career in engineering and architecture.",
+    "link": "https://www.legrandscholarship.co.in/"
+  },
+  {
+    "scholarship_name": "Kind Circle Meritorious Scholarship",
+    "providing_body": "Kind Circle",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 75% marks in the qualifying examination.",
+    "brief_description": "A scholarship program to help meritorious students from economically backward families to pursue their education.",
+    "link": "https://www.kindcircle.org/"
+  },
+  {
+    "scholarship_name": "Saksham Scholarship for Specially-Abled Students",
+    "providing_body": "All India Council for Technical Education (AICTE)",
+    "degree_level": ["Undergraduate", "Diploma"],
+    "field_of_study": ["Technical courses"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Must be admitted to a technical diploma/degree course at an AICTE approved institution.",
+    "brief_description": "A scheme to provide encouragement and support to specially-abled children to pursue technical education.",
+    "link": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham-Scholarship-Scheme"
+  },
+  {
+    "scholarship_name": "Pragati Scholarship for Girl Students",
+    "providing_body": "All India Council for Technical Education (AICTE)",
+    "degree_level": ["Undergraduate", "Diploma"],
+    "field_of_study": ["Technical courses"],
+    "gender_eligibility": "Female",
+    "gpa_requirement": "Must be admitted to a technical diploma/degree course at an AICTE approved institution.",
+    "brief_description": "A scheme to provide encouragement and support to girl children to pursue technical education.",
+    "link": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati-Scholarship-Scheme"
+  },
+  {
+    "scholarship_name": "Post-Matric Scholarship for Minorities",
+    "providing_body": "Ministry of Minority Affairs, Government of India",
+    "degree_level": ["Undergraduate", "Postgraduate", "PhD"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 50% marks in the previous final examination.",
+    "brief_description": "A scholarship to provide financial assistance to students from minority communities for studies in India in a government or private higher secondary school/college/university.",
+    "link": "https://scholarships.gov.in/"
+  },
+  {
+    "scholarship_name": "Begum Hazrat Mahal National Scholarship",
+    "providing_body": "Ministry of Minority Affairs, Government of India",
+    "degree_level": ["School (Class IX to XII)"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "Female",
+    "gpa_requirement": "Minimum 50% marks in the previous qualifying examination.",
+    "brief_description": "A scholarship for meritorious girl students belonging to the six notified minority communities.",
+    "link": "https://scholarships.gov.in/"
+  },
+  {
+    "scholarship_name": "Dhruv - Pradhan Mantri Innovative Learning Programme",
+    "providing_body": "Ministry of Education, Government of India",
+    "degree_level": ["School (Class IX to XII)"],
+    "field_of_study": ["Science", "Performing Arts"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Selection through a screening process.",
+    "brief_description": "A program to identify and encourage talented children to enrich their skills and knowledge.",
+    "link": "https://dhruv.education.gov.in/"
+  },
+  {
+    "scholarship_name": "Tata Trusts Means-Grant for College",
+    "providing_body": "Tata Trusts",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on financial need and academic merit.",
+    "brief_description": "Provides financial support to deserving students for their college education.",
+    "link": "https://www.tatatrusts.org/our-work/individual-grants-programme"
+  },
+  {
+    "scholarship_name": "CLP India Scholarship Scheme",
+    "providing_body": "CLP India",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 50% marks in the previous qualifying examination.",
+    "brief_description": "A scholarship for students from communities around CLP's project locations.",
+    "link": "https://www.clpindia.in/social-responsibility"
+  },
+  {
+    "scholarship_name": "GAIL Utkarsh Scholarship",
+    "providing_body": "GAIL (India) Limited",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Engineering", "Medicine"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on merit in competitive examinations like JEE and NEET.",
+    "brief_description": "A scholarship to support meritorious students from underprivileged backgrounds pursuing professional courses.",
+    "link": "https://gailonline.com/CR/GailUtkarsh.html"
+  },
+  {
+    "scholarship_name": "LIC Golden Jubilee Scholarship",
+    "providing_body": "Life Insurance Corporation of India (LIC)",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 60% marks in Class XII.",
+    "brief_description": "A scholarship to provide better opportunities for higher education to meritorious students from economically weaker families.",
+    "link": "https://licindia.in/golden-jubilee-foundation/scholarship"
+  },
+  {
+    "scholarship_name": "Maruti Suzuki 'UDGAM' Scholarship Program",
+    "providing_body": "Maruti Suzuki India Limited",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Engineering"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on merit and financial need.",
+    "brief_description": "A scholarship program to support deserving students from BPL families to pursue their dream of becoming engineers.",
+    "link": "https://www.marutisuzuki.com/corp/social-initiatives/community-development"
+  },
+  {
+    "scholarship_name": "Dr. Ambedkar Post-Matric Scholarship for Economically Backward Class (EBC) Students",
+    "providing_body": "Government of India and State Governments",
+    "degree_level": ["Undergraduate", "Postgraduate", "PhD"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Varies by state; typically based on passing the previous qualifying examination.",
+    "brief_description": "A centrally sponsored scheme to provide financial assistance to EBC students for studies beyond the matriculation stage.",
+    "link": "https://scholarships.gov.in/"
+  },
+  {
+    "scholarship_name": "UGC Ishan Uday Scholarship for North Eastern Region",
+    "providing_body": "University Grants Commission (UGC)",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["General Degree Courses", "Technical and Professional courses"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Must have passed Class XII or equivalent exam from a school situated in the North Eastern Region.",
+    "brief_description": "Aims to provide equal opportunities for higher studies to students from the North Eastern Region.",
+    "link": "https://www.ugc.ac.in/ner/"
+  },
+  {
+    "scholarship_name": "National Fellowship and Scholarship for Higher Education of ST Students",
+    "providing_body": "Ministry of Tribal Affairs, Government of India",
+    "degree_level": ["PhD", "Postgraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Requires a Master's degree for the PhD fellowship.",
+    "brief_description": "Provides financial assistance to Scheduled Tribe students for pursuing higher education including M.Phil and Ph.D.",
+    "link": "https://scholarships.gov.in/"
+  },
+  {
+    "scholarship_name": "Scholarship for Top Class Education for Students with Disabilities",
+    "providing_body": "Department of Empowerment of Persons with Disabilities, Government of India",
+    "degree_level": ["Postgraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Must have a valid disability certificate.",
+    "brief_description": "Aims to recognize and promote quality education amongst students with disabilities by providing full financial support.",
+    "link": "https://disabilityaffairs.gov.in/content/page/scholarships.php"
+  },
+  {
+    "scholarship_name": "Amazon Future Engineer Scholarship",
+    "providing_body": "Amazon India",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Computer Science", "Engineering"],
+    "gender_eligibility": "Female",
+    "gpa_requirement": "Based on academic performance and other criteria.",
+    "brief_description": "A scholarship program for meritorious girl students to pursue a career in computer science and engineering.",
+    "link": "https://www.amazon.in/amazon-future-engineer-scholarship-india/b?ie=UTF8&node=26628461031"
+  },
+  {
+    "scholarship_name": "G.P. Birla Education Foundation Scholarship",
+    "providing_body": "G.P. Birla Educational Foundation",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Engineering", "Medicine", "Science", "Commerce", "Arts", "Law", "Architecture"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 80% marks in Class 12.",
+    "brief_description": "Provides financial assistance to meritorious students from West Bengal to pursue their higher education.",
+    "link": "https://www.gpbirlaedufoundation.com/"
+  },
+  {
+    "scholarship_name": "Raman Kant Munjal Scholarship",
+    "providing_body": "Raman Kant Munjal Foundation",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Finance", "Business Management"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 80% in Class 10th and 12th.",
+    "brief_description": "Supports deserving students to pursue finance and management-related degree courses.",
+    "link": "https://rkmfoundation.org/scholarships/"
+  },
+  {
+    "scholarship_name": "Sahu Jain Trust Scholarship",
+    "providing_body": "Sahu Jain Trust",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["Engineering", "Medicine", "MBA"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Merit-based selection.",
+    "brief_description": "Offers need-based and merit-based scholarships for higher education in India.",
+    "link": "http://www.sahujaintrust.org/"
+  },
+  {
+    "scholarship_name": "Foundation for Excellence (FFE) Scholarship",
+    "providing_body": "Foundation for Excellence",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Engineering", "Medicine"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on merit and financial need.",
+    "brief_description": "Provides financial aid to exceptionally bright students to pursue their studies in engineering and medicine.",
+    "link": "https://ffe.org/scholarships/"
+  },
+  {
+    "scholarship_name": "Vidyadhan Scholarship Program",
+    "providing_body": "Sarojini Damodaran Foundation",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 90% in Class 10 (or as per state-specific criteria).",
+    "brief_description": "A comprehensive scholarship program that supports students from economically disadvantaged families to pursue higher education.",
+    "link": "https://www.vidyadhan.org/"
+  },
+  {
+    "scholarship_name": "IDFC FIRST Bank MBA Scholarship",
+    "providing_body": "IDFC FIRST Bank",
+    "degree_level": ["Postgraduate"],
+    "field_of_study": ["Business (MBA)"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Must be enrolled in the first year of an MBA program at select Indian B-schools.",
+    "brief_description": "A need-based MBA scholarship that provides financial assistance to meritorious students.",
+    "link": "https://www.idfcfirstbank.com/personal-banking/loans/education-loan/mba-scholarship"
+  },
+  {
+    "scholarship_name": "OPJEMS (O. P. Jindal Engineering and Management Scholarship)",
+    "providing_body": "O.P. Jindal Group",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["Engineering", "Management"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on academic merit and selection process at partner institutes.",
+    "brief_description": "A merit-based scholarship for students of leading engineering and management institutions in India.",
+    "link": "http://www.opjems.com/"
+  },
+  {
+    "scholarship_name": "T. Thomas Scholarship for Business Leaders",
+    "providing_body": "Hindustan Unilever Limited (HUL)",
+    "degree_level": ["Postgraduate"],
+    "field_of_study": ["Business (MBA)"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Awarded to second-year students at select IIMs.",
+    "brief_description": "A prestigious scholarship awarded to aspiring business leaders at top B-schools in India.",
+    "link": "https://www.hul.co.in/careers/graduates/t-thomas-scholarship/"
+  },
+  {
+    "scholarship_name": "Aditya Birla Group Scholarship",
+    "providing_body": "Aditya Birla Group",
+    "degree_level": ["Postgraduate"],
+    "field_of_study": ["Management (MBA)"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Merit-based selection from students of select IIMs, XLRI, and BITS Pilani.",
+    "brief_description": "A scholarship that nurtures future leaders by supporting them through their management education.",
+    "link": "https://www.adityabirla.com/careers/aditya-birla-group-scholarship"
+  },
+  {
+    "scholarship_name": "Federal Bank Hormis Memorial Foundation Scholarship",
+    "providing_body": "Federal Bank",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Medicine", "Engineering", "Agriculture", "Nursing", "MBA"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on merit and financial need; for students from select states.",
+    "brief_description": "A scholarship to support students from specified states to pursue professional courses.",
+    "link": "https://www.federalbank.co.in/corporate-social-responsibility"
+  },
+  {
+    "scholarship_name": "Merck India Charitable Trust Scholarship",
+    "providing_body": "Merck India",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 80% marks in Class 10.",
+    "brief_description": "A need-based scholarship for meritorious students from Mumbai, Navi Mumbai, Thane, and Bengaluru.",
+    "link": "https://www.merckgroup.com/in-en/company/merck-in-india/corporate-social-responsibility.html"
+  },
+  {
+    "scholarship_name": "DRDO Scholarship Scheme for Girls",
+    "providing_body": "Defence Research and Development Organisation (DRDO)",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["Aerospace Engineering", "Aeronautical Engineering", "Space Engineering", "Avionics"],
+    "gender_eligibility": "Female",
+    "gpa_requirement": "Based on merit in JEE (Main).",
+    "brief_description": "Aims to attract and encourage talented girls to pursue education in niche areas of defence technology.",
+    "link": "https://www.drdo.gov.in/drdo/ceptam-notice-board"
+  },
+  {
+    "scholarship_name": "Inlaks Shivdasani Foundation Scholarships",
+    "providing_body": "Inlaks Shivdasani Foundation",
+    "degree_level": ["Postgraduate", "PhD"],
+    "field_of_study": ["All fields (except Engineering, Computer Science, Business Studies, Medicine, Public Health, Indian Studies and History)"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "A good first degree from a recognized Indian university.",
+    "brief_description": "Provides scholarships for talented young Indians to pursue a full-time Master's or Doctoral program at top institutions abroad.",
+    "link": "https://www.inlaksfoundation.org/scholarships/"
+  },
+  {
+    "scholarship_name": "JN Tata Endowment for Higher Education of Indians",
+    "providing_body": "JN Tata Endowment",
+    "degree_level": ["Postgraduate", "PhD"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "A good academic record and must have secured admission to a course abroad.",
+    "brief_description": "A one-time loan scholarship for Indian nationals for postgraduate/PhD/Postdoctoral studies abroad.",
+    "link": "https://www.jntataendowment.org/"
+  },
+  {
+    "scholarship_name": "K.C. Mahindra Scholarships for Post-Graduate Studies Abroad",
+    "providing_body": "K. C. Mahindra Education Trust",
+    "degree_level": ["Postgraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "A good first-class degree or equivalent diploma.",
+    "brief_description": "Interest-free loan scholarships for deserving students to pursue their postgraduate studies abroad.",
+    "link": "https://www.kcmet.org/what-we-do-scholarship-grants.aspx"
+  },
+  {
+    "scholarship_name": "Narotam Sekhsaria Scholarship Programme",
+    "providing_body": "Narotam Sekhsaria Foundation",
+    "degree_level": ["Postgraduate"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "A good academic record.",
+    "brief_description": "Provides interest-free loan scholarships to meritorious Indian students pursuing postgraduate studies in India and abroad.",
+    "link": "https://pg.nsfoundation.co.in/"
+  },
+  {
+    "scholarship_name": "DAAD Scholarships for Indian Students",
+    "providing_body": "German Academic Exchange Service (DAAD)",
+    "degree_level": ["Postgraduate", "PhD"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Varies by program; typically requires a good academic record.",
+    "brief_description": "Offers a wide range of scholarships for Indian students to pursue higher education and research in Germany.",
+    "link": "https://www.daad.in/en/finding-funding/"
+  },
+  {
+    "scholarship_name": "Fulbright-Nehru Fellowships for Indians",
+    "providing_body": "United States-India Educational Foundation (USIEF)",
+    "degree_level": ["Postgraduate", "PhD"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "A good academic record and relevant professional experience.",
+    "brief_description": "A prestigious fellowship for outstanding Indians to pursue master's, doctoral, or post-doctoral research at US universities.",
+    "link": "https://www.usief.org.in/Fellowships-for-Indian-Citizens.aspx"
+  },
+  {
+    "scholarship_name": "Chevening Scholarships",
+    "providing_body": "UK Government's Foreign, Commonwealth & Development Office",
+    "degree_level": ["Postgraduate (Master's)"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "An undergraduate degree and at least two years of work experience.",
+    "brief_description": "The UK government’s global scholarship programme, offering future leaders the unique opportunity to study in the UK.",
+    "link": "https://www.chevening.org/scholarship/india/"
+  },
+  {
+    "scholarship_name": "Commonwealth Scholarships for Indian Students",
+    "providing_body": "Commonwealth Scholarship Commission in the UK",
+    "degree_level": ["Postgraduate", "PhD"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "A good academic record and other criteria set by the nominating agency in India (UGC/MHRD).",
+    "brief_description": "Scholarships for students from Commonwealth countries, including India, to pursue higher education in the UK.",
+    "link": "https://cscuk.fcdo.gov.uk/scholarships/"
+  },
+  {
+    "scholarship_name": "Shastri Indo-Canadian Institute Scholarships",
+    "providing_body": "Shastri Indo-Canadian Institute",
+    "degree_level": ["Postgraduate", "PhD", "Postdoctoral"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Varies by program.",
+    "brief_description": "Offers various fellowships and grants to promote academic and cultural exchange between India and Canada.",
+    "link": "https://www.shastriinstitute.org/grants-and-awards"
+  },
+  {
+    "scholarship_name": "Nishkam Sikh Welfare Council Scholarship",
+    "providing_body": "Nishkam Sikh Welfare Council",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Professional courses like Engineering, Medicine, IT, etc."],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 60% in Class 12.",
+    "brief_description": "Provides financial aid to needy and meritorious students pursuing professional courses.",
+    "link": "http://www.nishkam.org/"
+  },
+  {
+    "scholarship_name": "Bihar Post-Matric Scholarship",
+    "providing_body": "Government of Bihar",
+    "degree_level": ["Undergraduate", "Postgraduate", "PhD"],
+    "field_of_study": ["All fields"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Must be a permanent resident of Bihar and belong to SC, ST, BC, or EBC category.",
+    "brief_description": "A state-level scholarship to support students from reserved categories for post-matriculation studies.",
+    "link": "https://pmsonline.bih.nic.in/"
+  },
+  {
+    "scholarship_name": "Bihar Student Credit Card Scheme",
+    "providing_body": "Government of Bihar",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["General and professional courses"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Must have passed Class 12.",
+    "brief_description": "A loan scheme to facilitate students in pursuing higher education by providing financial assistance up to INR 4 Lakhs.",
+    "link": "https://www.7nishchay-yuvaupmission.bihar.gov.in/"
+  },
+  {
+    "scholarship_name": "Azim Premji Foundation Fellowship",
+    "providing_body": "Azim Premji Foundation",
+    "degree_level": ["Fellowship (for working professionals)"],
+    "field_of_study": ["Education"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "A graduate degree and 3-10 years of work experience.",
+    "brief_description": "A two-year full-time program for working professionals who are looking for a meaningful career in the social sector.",
+    "link": "https://azimpremjifoundation.org/fellowship"
+  },
+  {
+    "scholarship_name": "Young India Fellowship (YIF)",
+    "providing_body": "Ashoka University",
+    "degree_level": ["Postgraduate (Diploma)"],
+    "field_of_study": ["Liberal Arts", "Leadership"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "An undergraduate degree in any discipline.",
+    "brief_description": "A one-year multidisciplinary postgraduate diploma programme in Liberal Studies with a focus on leadership development.",
+    "link": "https://yif.ashoka.edu.in/"
+  },
+  {
+    "scholarship_name": "Gandhi Fellowship",
+    "providing_body": "Piramal Foundation",
+    "degree_level": ["Fellowship (for graduates)"],
+    "field_of_study": ["Social Leadership", "Education"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "A graduate or postgraduate degree in any discipline.",
+    "brief_description": "A two-year residential program that helps talented young people develop the leadership skills to cause positive, large-scale social change.",
+    "link": "https://gandhifellowship.org/"
+  },
+  {
+    "scholarship_name": "Teach for India Fellowship",
+    "providing_body": "Teach for India",
+    "degree_level": ["Fellowship (for graduates)"],
+    "field_of_study": ["Education", "Leadership"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "A Bachelor's degree from an accredited college or university.",
+    "brief_description": "A two-year, full-time paid fellowship where individuals teach in under-resourced schools and develop leadership skills.",
+    "link": "https://www.teachforindia.org/fellowship"
+  },
+  {
+    "scholarship_name": "Prime Minister's Scholarship Scheme for Wards of States/UTs Police Personnel",
+    "providing_body": "Ministry of Home Affairs, Government of India",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Professional courses"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Minimum 60% in Class 12 or equivalent.",
+    "brief_description": "A scholarship for dependent wards of State/UT Police Personnel martyred during terror/naxal attacks.",
+    "link": "https://scholarships.gov.in/"
+  },
+  {
+    "scholarship_name": "SERB-POWER Research Grants for Women Scientists",
+    "providing_body": "Science and Engineering Research Board (SERB)",
+    "degree_level": ["Research Grant (for faculty)"],
+    "field_of_study": ["Science", "Engineering"],
+    "gender_eligibility": "Female",
+    "gpa_requirement": "PhD in a relevant field and a regular academic/research position.",
+    "brief_description": "A scheme to encourage and support women researchers in the S&T domain.",
+    "link": "https://www.serb.gov.in/schemes/power"
+  },
+  {
+    "scholarship_name": "IIMC Post-Graduate Diploma Programme Scholarships",
+    "providing_body": "Indian Institute of Mass Communication (IIMC)",
+    "degree_level": ["Postgraduate (Diploma)"],
+    "field_of_study": ["Journalism", "Advertising", "Public Relations"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on need and merit for students enrolled in IIMC's PG Diploma courses.",
+    "brief_description": "IIMC offers several scholarships and awards to meritorious and needy students.",
+    "link": "http://iimc.gov.in/"
+  },
+  {
+    "scholarship_name": "NIFT Means-cum-Merit Financial Assistance Scheme",
+    "providing_body": "National Institute of Fashion Technology (NIFT)",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["Fashion Design", "Technology", "Management"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on financial need and academic performance.",
+    "brief_description": "Provides financial assistance to deserving students pursuing courses at NIFT campuses.",
+    "link": "https://www.nift.ac.in/scholarships"
+  },
+  {
+    "scholarship_name": "National Law School of India University (NLSIU) Scholarships",
+    "providing_body": "NLSIU, Bengaluru",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["Law"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on merit and financial need for students enrolled at NLSIU.",
+    "brief_description": "NLSIU offers several scholarships and financial aid options to its students.",
+    "link": "https://www.nls.ac.in/admissions/scholarships-and-financial-aid/"
+  },
+  {
+    "scholarship_name": "Indian School of Business (ISB) PGP Scholarships",
+    "providing_body": "Indian School of Business (ISB)",
+    "degree_level": ["Postgraduate"],
+    "field_of_study": ["Management (PGP)"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on merit, need, and specific criteria for various scholarships.",
+    "brief_description": "ISB offers a wide range of scholarships to support students in its Post Graduate Programme in Management.",
+    "link": "https://www.isb.edu/en/pgp/admissions/fees-financing.html"
+  },
+  {
+    "scholarship_name": "Film and Television Institute of India (FTII) Scholarships",
+    "providing_body": "Film and Television Institute of India (FTII)",
+    "degree_level": ["Postgraduate (Diploma)"],
+    "field_of_study": ["Film", "Television", "Acting"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on merit and need for students enrolled at FTII.",
+    "brief_description": "FTII provides several scholarships to encourage talented students in the field of film and television.",
+    "link": "https://www.ftii.ac.in/p/scholarships"
+  },
+  {
+    "scholarship_name": "National Dairy Research Institute (NDRI) Institutional Fellowship",
+    "providing_body": "National Dairy Research Institute (NDRI)",
+    "degree_level": ["PhD"],
+    "field_of_study": ["Dairy Science", "Technology"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "A good Master's degree in a relevant field.",
+    "brief_description": "A fellowship for students pursuing doctoral programs at NDRI.",
+    "link": "http://www.ndri.res.in/academics/"
+  },
+  {
+    "scholarship_name": "J.C. Bose National Fellowship",
+    "providing_body": "Science and Engineering Research Board (SERB)",
+    "degree_level": ["Research Grant (for active scientists)"],
+    "field_of_study": ["Science", "Engineering"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Must be an active scientist with an outstanding research track record.",
+    "brief_description": "Recognizes and supports active, performing Indian scientists and engineers.",
+    "link": "https://www.serb.gov.in/schemes/jcbose"
+  },
+  {
+    "scholarship_name": "Lady Meherbai D. Tata Education Trust Scholarship",
+    "providing_body": "Lady Meherbai D. Tata Education Trust",
+    "degree_level": ["Postgraduate"],
+    "field_of_study": ["Social Work", "Social Sciences", "Education", "Gender Studies", "Child Health"],
+    "gender_eligibility": "Female",
+    "gpa_requirement": "A good academic record and admission to a reputed institution abroad.",
+    "brief_description": "Scholarships for Indian women graduates for higher education in specified fields in the US, UK, or Europe.",
+    "link": "https://www.tatatrusts.org/our-work/individual-grants-programme/education-grants"
+  },
+  {
+    "scholarship_name": "MakeMyTrip Foundation 'Padhte Raho, Badhte Raho' Scholarship",
+    "providing_body": "MakeMyTrip Foundation",
+    "degree_level": ["Undergraduate"],
+    "field_of_study": ["Tourism", "Hospitality"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on merit and financial need.",
+    "brief_description": "A scholarship to support students pursuing education in the travel and tourism sector.",
+    "link": "https://www.makemytrip.com/csr/"
+  },
+  {
+    "scholarship_name": "National Board for Higher Mathematics (NBHM) Scholarship",
+    "providing_body": "National Board for Higher Mathematics (NBHM)",
+    "degree_level": ["Postgraduate", "PhD"],
+    "field_of_study": ["Mathematics"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on performance in a written test.",
+    "brief_description": "A prestigious scholarship to promote the study of mathematics at advanced levels.",
+    "link": "https://www.nbhm.dae.gov.in/"
+  },
+  {
+    "scholarship_name": "Kishinchand Chellaram College (KC College) Scholarships",
+    "providing_body": "Kishinchand Chellaram College, Mumbai",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["All fields offered by the college"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on merit and financial need.",
+    "brief_description": "The college offers various scholarships and freeships to deserving and needy students.",
+    "link": "https://www.kccollege.edu.in/scholarships-financial-aid/"
+  },
+  {
+    "scholarship_name": "St. Xavier's College, Mumbai Scholarships",
+    "providing_body": "St. Xavier's College, Mumbai",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["All fields offered by the college"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on merit and financial need.",
+    "brief_description": "The college provides a number of scholarships and financial aid to support its students.",
+    "link": "https://xaviers.edu/main/index.php/admissions-aid"
+  },
+  {
+    "scholarship_name": "IIT Bombay Financial Aid",
+    "providing_body": "Indian Institute of Technology Bombay (IITB)",
+    "degree_level": ["Undergraduate", "Postgraduate", "PhD"],
+    "field_of_study": ["Engineering", "Technology", "Science", "Design"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on financial need (merit-cum-means) and merit.",
+    "brief_description": "IIT Bombay offers a variety of scholarships, assistantships, and financial aid to its students.",
+    "link": "https://www.iitb.ac.in/newacadhome/scholarships.jsp"
+  },
+  {
+    "scholarship_name": "University of Delhi Scholarships",
+    "providing_body": "University of Delhi",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["All fields offered by the university"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Varies by scholarship; mostly merit-cum-means based.",
+    "brief_description": "The University of Delhi and its constituent colleges offer numerous scholarships to their students.",
+    "link": "http://www.du.ac.in/index.php?page=opportunities-scholarships"
+  },
+  {
+    "scholarship_name": "Jawaharlal Nehru University (JNU) Merit-cum-Means Scholarships",
+    "providing_body": "Jawaharlal Nehru University (JNU)",
+    "degree_level": ["Undergraduate", "Postgraduate"],
+    "field_of_study": ["All fields offered by the university"],
+    "gender_eligibility": "All",
+    "gpa_requirement": "Based on financial need and academic performance.",
+    "brief_description": "JNU provides financial assistance to a large number of its students through merit-cum-means scholarships.",
+    "link": "https://www.jnu.ac.in/admissions/scholarships"
+  }
+]
