@@ -114,7 +114,7 @@ def main():
                 st.error("❌ Please enter your full name to save the profile.")
     
     # Main content with tabs
-    tab1, tab2, tab3 = st.tabs(["💬 Chat with AI", "🎯 Eligible Scholarships", "🔍 Search Scholarships"])
+    tab1, tab2 = st.tabs(["💬 Chat with AI", "🎯 Eligible Scholarships"])
     
     with tab1:
         # UPDATED HEADER FOR GEMINI
@@ -390,120 +390,7 @@ Please use current scholarship information and be specific about opportunities a
                         6. **Company Scholarships** - Many corporations offer educational funding
                         """)
     
-    with tab3:
-        st.header("🔍 Search Scholarships")
-        
-        col1, col2 = st.columns(2)
-        with col1:
-            search_query = st.text_input(
-                "Search Query", 
-                placeholder="e.g., computer science scholarships undergraduate India"
-            )
-        with col2:
-            search_field = st.selectbox(
-                "Filter by Field", 
-                ["All", "Engineering", "Medicine", "Business", "Computer Science", "Arts", "Science", "Law", "Education"]
-            )
-        
-        if st.button("🔍 Search Now", type="primary"):
-            if not search_query:
-                st.warning("⚠️ Please enter a search query")
-            else:
-                with st.spinner("🤖 Scholardeep is searching for scholarships..."):
-                    try:
-                        # Create comprehensive search prompt for Gemini
-                        field_filter = f" specifically for {search_field}" if search_field != "All" else ""
-                        
-                        search_prompt = f"""As an expert scholarship advisor with access to current scholarship information, please search for scholarships based on this query: "{search_query}"{field_filter}
 
-**Please provide a comprehensive list of scholarships that match this search, including:**
-
-1. **🎯 RELEVANT SCHOLARSHIPS** - List 5-10 scholarships that match the search criteria:
-   - Scholarship name and provider organization
-   - Award amount (if known)
-   - Eligibility requirements
-   - Application deadline (if known)
-   - Target demographic/field
-   - Application process overview
-   - Website/contact information (if available)
-
-2. **📊 SEARCH ANALYSIS**:
-   - How well each scholarship matches the search query
-   - Difficulty level of obtaining each scholarship
-   - Best matches for the search criteria
-
-3. **💡 ADDITIONAL OPPORTUNITIES**:
-   - Related scholarship categories to explore
-   - Alternative search terms that might yield more results
-   - Seasonal opportunities (if applicable)
-
-4. **🔍 SEARCH TIPS**:
-   - How to refine the search for better results
-   - Additional resources to check
-   - Best practices for finding more scholarships
-
-Please focus on current, active scholarships and provide specific, actionable information. Format your response with clear headings and bullet points for easy reading."""
-                        
-                        # Get search results from Gemini
-                        if st.session_state.chat_agent:
-                            gemini_response = st.session_state.chat_agent.llm.invoke(search_prompt)
-                            search_results = gemini_response.content if hasattr(gemini_response, 'content') else str(gemini_response)
-                            
-                            # Display the search results
-                            st.markdown(search_results)
-                            
-                            # Add search refinement suggestions
-                            st.divider()
-                            with st.expander("🔧 Refine Your Search"):
-                                st.write("""
-                                **💡 Search Tips for Better Results:**
-                                - Be specific about your field of study
-                                - Include your degree level (undergraduate, graduate, PhD)
-                                - Mention your country or target country
-                                - Add keywords like "merit-based", "need-based", "international"
-                                - Try different combinations of terms
-                                
-                                **📝 Example Search Queries:**
-                                - "Engineering scholarships for international students in USA"
-                                - "Medical school scholarships for underrepresented minorities"
-                                - "Computer science PhD funding opportunities"
-                                - "Business school scholarships for women"
-                                - "Arts scholarships for undergraduate students"
-                                """)
-                            
-                            # Add related searches
-                            st.subheader("🔗 Related Searches")
-                            related_searches = [
-                                f"{search_field} scholarships" if search_field != "All" else "Merit scholarships",
-                                f"International {search_query}",
-                                f"{search_query} deadlines",
-                                f"Graduate {search_query}" if "graduate" not in search_query.lower() else f"Undergraduate {search_query}"
-                            ]
-                            
-                            cols = st.columns(len(related_searches))
-                            for i, related_search in enumerate(related_searches):
-                                with cols[i]:
-                                    if st.button(f"🔍 {related_search}", key=f"related_{i}"):
-                                        st.rerun()
-                        else:
-                            st.error("❌ Scholardeep AI model not available. Please check your configuration.")
-                        
-                    except Exception as e:
-                        st.error(f"❌ Search error: {str(e)}")
-                        st.info("Please ensure your Google API key is properly configured and try again.")
-        
-        # Show search examples
-        with st.expander("📝 Search Examples"):
-            st.write("""
-            **Good Search Examples:**
-            - "Engineering scholarships for undergraduate students"
-            - "Medical school funding opportunities"
-            - "International student scholarships in Computer Science"
-            - "Merit-based scholarships for Business students"
-            - "PhD funding in Environmental Science"
-            - "Scholarships for women in STEM fields"
-            - "Need-based financial aid for graduate students"
-            """)
 
     # Footer
     st.divider()
